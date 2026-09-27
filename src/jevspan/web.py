@@ -7,7 +7,7 @@ import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -42,7 +42,7 @@ def presets() -> dict[str, dict]:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    load_dotenv()
+    load_dotenv(find_dotenv(usecwd=True))
     try:
         app.state.client = JevClient()
         app.state.error = None
