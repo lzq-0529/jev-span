@@ -39,18 +39,17 @@ $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后
 
 ## Benchmark
 
-Every method sees the same 200 test sentences per dataset (fixed seed) and the same type descriptions. Strict F1 requires exact boundaries and the exact type.
+Every method is zero-shot and sees the same 200 test sentences per dataset (fixed seed) and the same type descriptions. Strict F1 requires exact boundaries and the exact type.
 
-| Method | Training data | Avg strict F1 (12 sets) | Avg (8 English sets) | Latency / doc | Cost / 1k docs | Runs on |
-|---|---|---:|---:|---:|---:|---|
-| **JevSpan (Jev 1.13)** | none | **73.7** | **73.9** | **0.53 s** | $0.64 | Jev API |
-| Qwen3.8-27B, direct extraction | none | 72.1 | 73.8 | 1.65 s | $0.28 | DashScope API |
-| Qwen3-8B, direct extraction | none | 55.7 | 55.9 | 1.10 s | ~$0.004 | RTX 3090 |
-| GLiNER2.5-multi | none | 50.4 | 54.4 | 0.02 s | ~$0.001 | GPU or CPU |
-| GLiNER-multi v2.1 | none | 47.0 | 55.0 | 0.02 s | ~$0.001 | GPU or CPU |
-| GLiNER-large v2.1 (English only) | none | – | 56.3 | 0.03 s | ~$0.002 | GPU or CPU |
-| NuNER-Zero (English only) | none | – | 56.4 | 0.03 s | ~$0.002 | GPU or CPU |
-| Fine-tuned BERT / RoBERTa | 1.4k–45k labelled sentences | – | – | 0.01 s | ~$0.001 | GPU or CPU |
+| Method | Avg strict F1 (12 sets) | Avg (8 English sets) | Latency / doc | Cost / 1k docs | Runs on |
+|---|---:|---:|---:|---:|---|
+| **JevSpan (Jev 1.13)** | **73.7** | **73.9** | **0.53 s** | $0.64 | Jev API |
+| Qwen3.8-27B, direct extraction | 72.1 | 73.8 | 1.65 s | $0.28 | DashScope API |
+| Qwen3-8B, direct extraction | 55.7 | 55.9 | 1.10 s | ~$0.004 | RTX 3090 |
+| GLiNER2.5-multi | 50.4 | 54.4 | 0.02 s | ~$0.001 | GPU or CPU |
+| GLiNER-multi v2.1 | 47.0 | 55.0 | 0.02 s | ~$0.001 | GPU or CPU |
+| GLiNER-large v2.1 (English only) | – | 56.3 | 0.03 s | ~$0.002 | GPU or CPU |
+| NuNER-Zero (English only) | – | 56.4 | 0.03 s | ~$0.002 | GPU or CPU |
 
 <details>
 <summary><b>Strict F1 per dataset</b></summary>
@@ -63,9 +62,8 @@ Every method sees the same 200 test sentences per dataset (fixed seed) and the s
 | GLiNER2.5-multi | 55.2 | 56.2 | 31.1 | 27.9 | 64.5 | 51.4 | 44.1 | 43.3 | 56.4 | 64.1 | 58.7 | 52.5 |
 | GLiNER-multi v2.1 | 50.5 | 21.1 | 30.3 | 22.5 | 58.4 | 43.3 | 27.8 | 47.3 | 62.6 | 71.5 | 66.5 | 62.3 |
 | NuNER-Zero | – | – | – | – | 59.1 | 41.6 | 35.9 | 50.7 | 60.4 | 70.2 | 72.3 | 60.8 |
-| Fine-tuned (supervised) | 96.7 | 96.0 | 69.9 | 63.4 | 93.0 | 59.1 | 82.0 | – | – | – | – | – |
 
-Bold marks the best zero-shot score. Relaxed F1, precision, recall, per-dataset latency and cost, and hardware requirements are in [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md).
+Bold marks the best score per dataset. Relaxed F1, precision, recall, per-dataset latency and cost, and hardware requirements are in [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md).
 
 </details>
 
@@ -73,7 +71,6 @@ Bold marks the best zero-shot score. Relaxed F1, precision, recall, per-dataset 
 
 - **Against Qwen3.8-27B:** JevSpan leads by 10 points on MSRA, 6.5 on Weibo, 6.4 on CrossNER politics, and 3.9 on CLUENER. It trails on CoNLL (−4.2) and MIT Restaurant (−8.4). It is about 3× faster per document and costs about 2.3× more.
 - **Against small open zero-shot models:** about 20 points ahead of GLiNER and NuNER, at API latency rather than local-GPU latency.
-- **Against fine-tuned models:** if you have thousands of labelled sentences for a fixed label set, a fine-tuned encoder is still more accurate and far cheaper. JevSpan is for when you don't, or when the types keep changing.
 
 <sub>Jev latency and cost: 30 sentences per dataset, no cache, one document at a time, at $0.042 per million input tokens. Qwen3.8-27B: DashScope Beijing list price, thinking disabled, 8 concurrent requests. Local models: RTX 3090, cost from rental price. Measured September 2026 with `jev-1.13.0`.</sub>
 

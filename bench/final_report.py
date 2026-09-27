@@ -40,18 +40,16 @@ METHODS = [
     ("gliner_multi", "GLiNER-multi v2.1", ("gpu", "gliner_multi"), ("gpu", "gliner_multi")),
     ("gliner_large", "GLiNER-large v2.1 (EN only)", ("gpu", "gliner_large"), ("gpu", "gliner_large")),
     ("nuner", "NuNER-Zero (EN only)", ("gpu", "nuner_zero"), ("gpu", "nuner_zero")),
-    ("finetuned", "Fine-tuned BERT/RoBERTa (supervised)", ("gpu", "finetuned"), ("gpu", "finetuned")),
 ]
 
 RESOURCES = {
-    "accurate": ("–", "–", "none (HTTPS client)", "Jev API", "no", "type name + 1-line description"),
-    "qwen27b": ("27B", "–", "none (HTTPS client)", "DashScope API", "no", "same prompt / descriptions"),
-    "qwen8b": ("8.2B", "15.3 GB", "~21 GB (vLLM pre-allocates 90%)", "RTX 3090 24 GB", "no", "same prompt / descriptions"),
-    "gliner25": ("~0.29B", "1.1 GB", "2.8 GB", "RTX 3090 (or CPU)", "no", "label + description"),
-    "gliner_multi": ("~0.3B", "2.2 GB", "2.4 GB", "RTX 3090 (or CPU)", "no", "label names"),
-    "gliner_large": ("~0.46B", "1.7 GB", "2.8 GB", "RTX 3090 (or CPU)", "no", "label names"),
-    "nuner": ("~0.45B", "3.3 GB", "3.3 GB", "RTX 3090 (or CPU)", "no", "label names"),
-    "finetuned": ("0.1–0.36B", "0.4–1.3 GB", "0.4–1.7 GB", "RTX 3090 (or CPU)", "yes: 1.4k–45k labelled sentences per dataset", "one model per dataset"),
+    "accurate": ("–", "–", "none (HTTPS client)", "Jev API", "type name + 1-line description"),
+    "qwen27b": ("27B", "–", "none (HTTPS client)", "DashScope API", "same prompt / descriptions"),
+    "qwen8b": ("8.2B", "15.3 GB", "~21 GB (vLLM pre-allocates 90%)", "RTX 3090 24 GB", "same prompt / descriptions"),
+    "gliner25": ("~0.29B", "1.1 GB", "2.8 GB", "RTX 3090 (or CPU)", "label + description"),
+    "gliner_multi": ("~0.3B", "2.2 GB", "2.4 GB", "RTX 3090 (or CPU)", "label names"),
+    "gliner_large": ("~0.46B", "1.7 GB", "2.8 GB", "RTX 3090 (or CPU)", "label names"),
+    "nuner": ("~0.45B", "3.3 GB", "3.3 GB", "RTX 3090 (or CPU)", "label names"),
 }
 
 
@@ -128,8 +126,8 @@ def main() -> None:
     table("Cost per 1,000 documents (USD)", rows, ["Mean"], lambda v: "–" if v is None else (f"{v:.4f}" if v < 0.1 else f"{v:.3f}"))
 
     print("\n### Resources and prerequisites\n")
-    print("| Method | Parameters | Disk | Peak GPU memory | Runs on | Needs labelled training data | What you provide per task |")
-    print("|---|---|---|---|---|---|---|")
+    print("| Method | Parameters | Disk | Peak GPU memory | Runs on | What you provide per task |")
+    print("|---|---|---|---|---|---|")
     for k, *_ in METHODS:
         print(f"| {names[k]} | " + " | ".join(RESOURCES[k]) + " |")
 
