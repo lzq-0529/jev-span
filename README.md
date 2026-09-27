@@ -82,8 +82,8 @@ Bold marks the best zero-shot score. Relaxed F1, precision, recall, per-dataset 
 You need Python 3.12+, [uv](https://docs.astral.sh/uv/), and a TypeSafe API key from [console.typesafe.ai](https://console.typesafe.ai).
 
 ```bash
-git clone https://github.com/<owner>/jevspan.git
-cd jevspan
+git clone https://github.com/lzq-0529/jev-span.git
+cd jev-span
 uv sync
 echo 'TYPESAFE_API_KEY=your-key' > .env    # .env is git-ignored
 

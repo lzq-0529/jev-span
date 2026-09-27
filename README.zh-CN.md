@@ -82,8 +82,8 @@ $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后
 需要 Python 3.12+、[uv](https://docs.astral.sh/uv/)，以及在 [console.typesafe.ai](https://console.typesafe.ai) 申请的 TypeSafe API key。
 
 ```bash
-git clone https://github.com/<owner>/jevspan.git
-cd jevspan
+git clone https://github.com/lzq-0529/jev-span.git
+cd jev-span
 uv sync
 echo 'TYPESAFE_API_KEY=你的key' > .env      # .env 已被 git 忽略
 

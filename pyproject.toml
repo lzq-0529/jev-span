@@ -27,6 +27,11 @@ dependencies = [
     "uvicorn[standard]>=0.54.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/lzq-0529/jev-span"
+Repository = "https://github.com/lzq-0529/jev-span"
+Issues = "https://github.com/lzq-0529/jev-span/issues"
+
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
