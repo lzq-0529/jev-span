@@ -53,8 +53,7 @@ Every method is zero-shot and sees the same 200 test sentences per dataset (fixe
 | GLiNER-large v2.1 (English only) | – | – | 56.3 |
 | NuNER-Zero (English only) | – | – | 56.4 |
 
-<details>
-<summary><b>Strict F1 per dataset</b></summary>
+**Strict F1 per dataset**
 
 | Method | MSRA | Resume | CLUENER | Weibo | CoNLL03 | WNUT17 | MIT-Rest | CN-AI | CN-Lit | CN-Music | CN-Pol | CN-Sci |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -69,7 +68,6 @@ Every method is zero-shot and sees the same 200 test sentences per dataset (fixe
 
 Bold marks the best zero-shot score on datasets no method has trained on. Relaxed F1, precision, recall and hardware requirements are in [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md).
 
-</details>
 
 \* Baidu UIE was pre-trained on a large mix of public supervised extraction data that very likely includes MSRA, Resume, CoNLL03 and MIT-Restaurant, so those four scores are not zero-shot. The **7 unseen sets** are CLUENER, Weibo and the five CrossNER domains; no compared method was trained on them.
 

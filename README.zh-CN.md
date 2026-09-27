@@ -53,8 +53,7 @@ $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后
 | GLiNER-large v2.1（仅英文） | – | – | 56.3 |
 | NuNER-Zero（仅英文） | – | – | 56.4 |
 
-<details>
-<summary><b>各数据集严格 F1</b></summary>
+**各数据集严格 F1**
 
 | 方法 | MSRA | Resume | CLUENER | Weibo | CoNLL03 | WNUT17 | MIT-Rest | CN-AI | CN-文学 | CN-音乐 | CN-政治 | CN-科学 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -69,7 +68,6 @@ $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后
 
 加粗是在所有方法都没训练过的数据集上的最高分。宽松 F1、精确率、召回率和硬件需求见 [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md)。
 
-</details>
 
 \* 百度 UIE 的预训练使用了大量公开的有监督抽取数据，很可能包含 MSRA、Resume、CoNLL03 和 MIT-Restaurant，这 4 项不能视为零样本成绩。**7 个未见集**指 CLUENER、Weibo 和 CrossNER 的 5 个领域，参与对比的方法都没有在这些数据上训练过。
 
