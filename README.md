@@ -5,12 +5,14 @@
 **Zero-shot named entity recognition built on [TypeSafe Jev](https://typesafe.ai).**<br/>
 Describe your entity types in one line each. No training data, no GPU, no fine-tuning.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lzq-0529/jev-span/blob/main/LICENSE)
 ![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-3776ab.svg)
 ![Zero-shot](https://img.shields.io/badge/NER-zero--shot-8a2be2.svg)
 ![Chinese + English](https://img.shields.io/badge/lang-中文%20%7C%20English-e34c26.svg)
 
-**English** · [简体中文](README.zh-CN.md)
+**English** · [简体中文](https://github.com/lzq-0529/jev-span/blob/main/README.zh-CN.md)
+
+<img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo.png" alt="JevSpan web UI: people, organizations and addresses highlighted in mixed Chinese and English text, with Jev's probability for each entity" width="900"/>
 
 </div>
 
@@ -66,7 +68,7 @@ Every method is zero-shot and sees the same 200 test sentences per dataset (fixe
 | GLiNER-multi v2.1 | 50.5 | 21.1 | 30.3 | 22.5 | 58.4 | 43.3 | 27.8 | 47.3 | 62.6 | 71.5 | 66.5 | 62.3 |
 | NuNER-Zero | – | – | – | – | 59.1 | 41.6 | 35.9 | 50.7 | 60.4 | 70.2 | 72.3 | 60.8 |
 
-Bold marks the best zero-shot score on datasets no method has trained on. Relaxed F1, precision, recall and hardware requirements are in [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md).
+Bold marks the best zero-shot score on datasets no method has trained on. Relaxed F1, precision, recall and hardware requirements are in [`bench/results/FINAL_REPORT.md`](https://github.com/lzq-0529/jev-span/blob/main/bench/results/FINAL_REPORT.md).
 
 
 \* Baidu UIE was pre-trained on a large mix of public supervised extraction data that very likely includes MSRA, Resume, CoNLL03 and MIT-Restaurant, so those four scores are not zero-shot. The **7 unseen sets** are CLUENER, Weibo and the five CrossNER domains; no compared method was trained on them.
@@ -81,7 +83,17 @@ Bold marks the best zero-shot score on datasets no method has trained on. Relaxe
 
 ## Quick start
 
-You need Python 3.12+, [uv](https://docs.astral.sh/uv/), and a TypeSafe API key from [console.typesafe.ai](https://console.typesafe.ai).
+You need Python 3.12+ and a TypeSafe API key from [console.typesafe.ai](https://console.typesafe.ai).
+
+```bash
+pip install jevspan
+export TYPESAFE_API_KEY=your-key            # or put it in a .env file in the current directory
+
+jevspan "Tim Cook announced that Apple will open a new office in Austin, Texas."
+jevspan-web                                 # http://127.0.0.1:47321
+```
+
+To work from source or reproduce the benchmark, use [uv](https://docs.astral.sh/uv/):
 
 ```bash
 git clone https://github.com/lzq-0529/jev-span.git
@@ -117,7 +129,7 @@ A schema is a JSON object. Each type needs a `description`; `title`, `examples`,
 uv run jevspan --schema my_schema.json -f notes.txt
 ```
 
-**The biggest accuracy lever is the boundary convention.** State what a type includes and excludes, and back it with a counter-example. On a small e-commerce set, one added sentence ("a model name excludes the product category and version suffix; a price excludes 'about'") raised strict F1 from 0.778 to 0.945. Ready-made schemas live in [`eval/schemas/`](eval/schemas), [`src/jevspan/presets/`](src/jevspan/presets), and one per benchmark in [`bench/schemas/`](bench/schemas).
+**The biggest accuracy lever is the boundary convention.** State what a type includes and excludes, and back it with a counter-example. On a small e-commerce set, one added sentence ("a model name excludes the product category and version suffix; a price excludes 'about'") raised strict F1 from 0.778 to 0.945. Ready-made schemas live in [`eval/schemas/`](https://github.com/lzq-0529/jev-span/tree/main/eval/schemas), [`src/jevspan/presets/`](https://github.com/lzq-0529/jev-span/tree/main/src/jevspan/presets), and one per benchmark in [`bench/schemas/`](https://github.com/lzq-0529/jev-span/tree/main/bench/schemas).
 
 Other optional fields: `include_brackets` (keep surrounding 《》 for book or film titles) and `min_chars` (default 2; set it to 1 for single-character entities). A shorthand `{"drug": "a medicine's name"}` also works.
 
@@ -171,6 +183,8 @@ Environment variables: `TYPESAFE_API_KEY` (or `JEV_API_KEY`), `TYPESAFE_BASE_URL
 
 `uv run jevspan-web` serves a small app at `http://127.0.0.1:47321`. Paste text, pick a preset (people, organizations and addresses; medical; e-commerce) or edit the schema JSON, and see the highlighted entities, a result table, token usage, and the decision tree that led to each answer. The interface is in Chinese.
 
+<img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo-full.png" alt="Full web UI including the decision trace: sentence, sub-clause and window levels, each with Jev's top score" width="900"/>
+
 ## How it works
 
 ```mermaid
@@ -220,7 +234,7 @@ uv run python bench/final_report.py > bench/results/FINAL_REPORT.md
 
 `bench/results/` ships the aggregate metrics behind every number above. Per-sentence predictions are left out because they quote the datasets.
 
-The hand-written development sets in [`eval/`](eval) (70 sentences of people, organizations and addresses, plus small medical and e-commerce sets) run with `uv run python eval/evaluate.py`. The offline unit tests need no key: `uv run pytest`.
+The hand-written development sets in [`eval/`](https://github.com/lzq-0529/jev-span/tree/main/eval) (70 sentences of people, organizations and addresses, plus small medical and e-commerce sets) run with `uv run python eval/evaluate.py`. The offline unit tests need no key: `uv run pytest`.
 
 ## Limitations
 
@@ -249,4 +263,4 @@ JevSpan is an independent open-source project. It is not affiliated with or endo
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/lzq-0529/jev-span/blob/main/LICENSE)

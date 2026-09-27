@@ -5,12 +5,14 @@
 **基于 [TypeSafe Jev](https://typesafe.ai) 的零样本实体识别。**<br/>
 每种实体类型用一句话描述即可。不需要标注数据，不需要 GPU，不需要微调。
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lzq-0529/jev-span/blob/main/LICENSE)
 ![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-3776ab.svg)
 ![Zero-shot](https://img.shields.io/badge/NER-zero--shot-8a2be2.svg)
 ![Chinese + English](https://img.shields.io/badge/lang-中文%20%7C%20English-e34c26.svg)
 
-[English](README.md) · **简体中文**
+[English](https://github.com/lzq-0529/jev-span/blob/main/README.md) · **简体中文**
+
+<img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo.png" alt="JevSpan 网页界面：在中英混合文本中高亮人名、机构、地址，并给出 Jev 对每个实体的概率" width="900"/>
 
 </div>
 
@@ -66,7 +68,7 @@ $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后
 | GLiNER-multi v2.1 | 50.5 | 21.1 | 30.3 | 22.5 | 58.4 | 43.3 | 27.8 | 47.3 | 62.6 | 71.5 | 66.5 | 62.3 |
 | NuNER-Zero | – | – | – | – | 59.1 | 41.6 | 35.9 | 50.7 | 60.4 | 70.2 | 72.3 | 60.8 |
 
-加粗是在所有方法都没训练过的数据集上的最高分。宽松 F1、精确率、召回率和硬件需求见 [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md)。
+加粗是在所有方法都没训练过的数据集上的最高分。宽松 F1、精确率、召回率和硬件需求见 [`bench/results/FINAL_REPORT.md`](https://github.com/lzq-0529/jev-span/blob/main/bench/results/FINAL_REPORT.md)。
 
 
 \* 百度 UIE 的预训练使用了大量公开的有监督抽取数据，很可能包含 MSRA、Resume、CoNLL03 和 MIT-Restaurant，这 4 项不能视为零样本成绩。**7 个未见集**指 CLUENER、Weibo 和 CrossNER 的 5 个领域，参与对比的方法都没有在这些数据上训练过。
@@ -81,7 +83,17 @@ $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后
 
 ## 快速开始
 
-需要 Python 3.12+、[uv](https://docs.astral.sh/uv/)，以及在 [console.typesafe.ai](https://console.typesafe.ai) 申请的 TypeSafe API key。
+需要 Python 3.12+，以及在 [console.typesafe.ai](https://console.typesafe.ai) 申请的 TypeSafe API key。
+
+```bash
+pip install jevspan
+export TYPESAFE_API_KEY=你的key              # 也可以写在当前目录的 .env 文件里
+
+jevspan "联系人：王建国，就职于深圳市腾讯计算机系统有限公司。"
+jevspan-web                                  # http://127.0.0.1:47321
+```
+
+如果要改代码或复现基准测试，用 [uv](https://docs.astral.sh/uv/) 从源码运行：
 
 ```bash
 git clone https://github.com/lzq-0529/jev-span.git
@@ -117,7 +129,7 @@ schema 是一个 JSON 对象。每个类型必须有 `description`；`title`、`
 uv run jevspan --schema my_schema.json -f notes.txt
 ```
 
-**对准确率影响最大的是边界约定。** 写清楚这个类型包含什么、不包含什么，再配一个反例。在一个电商小数据集上，只加一句「型号不含品类词和版本后缀，价格不含'约'」，严格 F1 就从 0.778 升到 0.945。现成的 schema 在 [`eval/schemas/`](eval/schemas)、[`src/jevspan/presets/`](src/jevspan/presets)，每个基准数据集的 schema 在 [`bench/schemas/`](bench/schemas)。
+**对准确率影响最大的是边界约定。** 写清楚这个类型包含什么、不包含什么，再配一个反例。在一个电商小数据集上，只加一句「型号不含品类词和版本后缀，价格不含'约'」，严格 F1 就从 0.778 升到 0.945。现成的 schema 在 [`eval/schemas/`](https://github.com/lzq-0529/jev-span/tree/main/eval/schemas)、[`src/jevspan/presets/`](https://github.com/lzq-0529/jev-span/tree/main/src/jevspan/presets)，每个基准数据集的 schema 在 [`bench/schemas/`](https://github.com/lzq-0529/jev-span/tree/main/bench/schemas)。
 
 其他可选字段：`include_brackets`（书名、电影名等保留外面的《》）和 `min_chars`（默认 2；单字实体设为 1）。也支持简写 `{"drug": "药品的名称"}`。
 
@@ -170,6 +182,8 @@ uv run jevspan --trace "文本"             # 打印每个片段、候选和判�
 
 `uv run jevspan-web` 会在 `http://127.0.0.1:47321` 启动一个小应用。粘贴文本，选一个预设（人名/机构/地址、医疗、电商）或直接编辑 schema JSON，就能看到高亮的实体、结果表、token 用量，以及每个结果背后的决策树。
 
+<img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo-full.png" alt="完整网页界面，含逐层过程：句子、分隔符、窗口各层级及 Jev 最高分" width="900"/>
+
 ## 工作原理
 
 ```mermaid
@@ -219,7 +233,7 @@ uv run python bench/final_report.py > bench/results/FINAL_REPORT.md
 
 `bench/results/` 里附带了上面所有数字对应的汇总指标。逐句预测没有放进来，因为它们会引用数据集原文。
 
-[`eval/`](eval) 里有手写的开发集（70 条人名/机构/地址句子，以及医疗、电商两个小集），用 `uv run python eval/evaluate.py` 运行。离线单元测试不需要 key：`uv run pytest`。
+[`eval/`](https://github.com/lzq-0529/jev-span/tree/main/eval) 里有手写的开发集（70 条人名/机构/地址句子，以及医疗、电商两个小集），用 `uv run python eval/evaluate.py` 运行。离线单元测试不需要 key：`uv run pytest`。
 
 ## 局限
 
@@ -248,4 +262,4 @@ JevSpan 是独立的开源项目，与 TypeSafe AI 没有隶属或背书关系�
 
 ## 许可证
 
-[MIT](LICENSE)
+[MIT](https://github.com/lzq-0529/jev-span/blob/main/LICENSE)
