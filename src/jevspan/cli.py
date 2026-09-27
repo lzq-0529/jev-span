@@ -1,4 +1,4 @@
-"""Command line: `jev-ner "text"`, `jev-ner -f file.txt`, or pipe text via stdin."""
+"""Command line: `jevspan "text"`, `jevspan -f file.txt`, or pipe text via stdin."""
 
 from __future__ import annotations
 
@@ -61,7 +61,7 @@ async def _run(args: argparse.Namespace, text: str) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     load_dotenv()
-    p = argparse.ArgumentParser(prog="jev-ner", description="用 Jev 做实体识别（默认人名/机构/地址，可用 --schema 零样本自定义）")
+    p = argparse.ArgumentParser(prog="jevspan", description="用 Jev 做实体识别（默认人名/机构/地址，可用 --schema 零样本自定义）")
     p.add_argument("text", nargs="?", help="要识别的文本；省略时读 -f 或 stdin")
     p.add_argument("-f", "--file", help="从文件读取文本")
     p.add_argument("--json", action="store_true", help="输出 JSON")

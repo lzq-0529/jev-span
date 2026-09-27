@@ -19,7 +19,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent / "eval"))
 from evaluate import load_dataset, match, prf  # noqa: E402
 
-from jev_ner import JevClient, Recognizer, Schema  # noqa: E402
+from jevspan import JevClient, Recognizer, Schema  # noqa: E402
 
 ALL = [
     "msra", "resume", "cluener", "weibo", "conll", "wnut", "mitres",

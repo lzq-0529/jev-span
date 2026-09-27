@@ -1,4 +1,4 @@
-"""Small web UI: `uv run jev-ner-web` then open http://127.0.0.1:47321."""
+"""Small web UI: `uv run jevspan-web` then open http://127.0.0.1:47321."""
 
 from __future__ import annotations
 
@@ -54,7 +54,7 @@ async def lifespan(app: FastAPI):
         await app.state.client.aclose()
 
 
-app = FastAPI(title="Jev 实体识别", lifespan=lifespan)
+app = FastAPI(title="JevSpan", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
 
 
@@ -113,7 +113,7 @@ def main() -> None:
     import uvicorn
 
     uvicorn.run(
-        "jev_ner.web:app",
+        "jevspan.web:app",
         host=os.environ.get("HOST", "127.0.0.1"),
         port=int(os.environ.get("PORT", "47321")),
     )

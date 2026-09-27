@@ -17,7 +17,7 @@ import torch
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent / "src"))
-from jev_ner.schema import Schema  # noqa: E402
+from jevspan.schema import Schema  # noqa: E402
 
 ZH = {"msra", "resume", "cluener", "weibo"}
 ALL = [

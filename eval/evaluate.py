@@ -16,7 +16,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from jev_ner import DEFAULT_SCHEMA, JevClient, Recognizer, Schema
+from jevspan import DEFAULT_SCHEMA, JevClient, Recognizer, Schema
 
 HERE = Path(__file__).parent
 CONFIGS = {

@@ -1,4 +1,4 @@
-from jev_ner.segmenter import (
+from jevspan.segmenter import (
     LEVEL_CLAUSE,
     LEVEL_ENCLOSURE,
     LEVEL_SPACE,

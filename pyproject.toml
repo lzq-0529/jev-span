@@ -1,10 +1,23 @@
 [project]
-name = "jev-ner"
+name = "jevspan"
 version = "0.1.0"
-description = "Punctuation-driven entity recognition (person / organization / address) scored by TypeSafe Jev"
+description = "Zero-shot named entity recognition built on TypeSafe Jev: punctuation-guided spans, calibrated scores, no training"
 readme = "README.md"
-authors = [
-    { name = "Cursor Agent", email = "cursoragent@cursor.com" }
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "JevSpan contributors" }]
+keywords = ["ner", "named-entity-recognition", "zero-shot", "information-extraction", "jev", "typesafe", "chinese-nlp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: Chinese (Simplified)",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
 ]
 requires-python = ">=3.12"
 dependencies = [
@@ -27,8 +40,8 @@ dev = [
 ]
 
 [project.scripts]
-jev-ner = "jev_ner.cli:main"
-jev-ner-web = "jev_ner.web:main"
+jevspan = "jevspan.cli:main"
+jevspan-web = "jevspan.web:main"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

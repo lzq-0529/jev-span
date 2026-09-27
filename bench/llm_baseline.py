@@ -20,7 +20,7 @@ sys.path.insert(0, str(HERE.parent / "src"))
 from baselines_gpu import ALL, load_items, score  # noqa: E402
 from llm_common import PROMPT, json_schema, to_spans  # noqa: E402
 
-from jev_ner.schema import Schema  # noqa: E402
+from jevspan.schema import Schema  # noqa: E402
 
 def main() -> None:
     ap = argparse.ArgumentParser()

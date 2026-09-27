@@ -26,7 +26,7 @@ sys.path.insert(0, str(HERE.parent / "eval"))
 from evaluate import load_dataset, match, prf  # noqa: E402
 from llm_common import PROMPT, to_spans  # noqa: E402
 
-from jev_ner.schema import Schema  # noqa: E402
+from jevspan.schema import Schema  # noqa: E402
 
 ALL = [
     "msra", "resume", "cluener", "weibo", "conll", "wnut", "mitres",

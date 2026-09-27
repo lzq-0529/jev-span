@@ -2,7 +2,7 @@ import re
 
 import pytest
 
-from jev_ner.recognizer import (
+from jevspan.recognizer import (
     BOUNDARY_CRITERIA,
     MIXED,
     NONE,
@@ -15,7 +15,7 @@ from jev_ner.recognizer import (
     merge_adjacent,
     resolve_overlaps,
 )
-from jev_ner.schema import Schema
+from jevspan.schema import Schema
 
 GAZETTEER = {
     "张伟": "person",
@@ -219,7 +219,7 @@ async def test_boundary_refinement_trims_extra_words(jev):
 
 
 def test_window_pruning_skips_function_word_edges(jev):
-    from jev_ner.segmenter import split_sentences
+    from jevspan.segmenter import split_sentences
 
     text = "and the Liberal Party won"
     seg = split_sentences(text)[0]
