@@ -1,0 +1,1 @@
+{"method": "glm4_9b", "model": "THUDM/GLM-4-9B-0414", "dataset": "crossner_music", "n": 200, "strict": [0.7185, 0.4657, 0.5651], "relaxed": [0.7661, 0.4966, 0.6026], "latency_avg_s": 3.748, "wall_s": 95.4, "usage": {"prompt_tokens": 83730, "completion_tokens": 16987, "dropped_params": []}}

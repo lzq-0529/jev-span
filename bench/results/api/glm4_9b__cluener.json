@@ -1,0 +1,1 @@
+{"method": "glm4_9b", "model": "THUDM/GLM-4-9B-0414", "dataset": "cluener", "n": 200, "strict": [0.5486, 0.3559, 0.4317], "relaxed": [0.6424, 0.4167, 0.5055], "latency_avg_s": 3.1, "wall_s": 79.2, "usage": {"prompt_tokens": 96838, "completion_tokens": 5845, "dropped_params": []}}

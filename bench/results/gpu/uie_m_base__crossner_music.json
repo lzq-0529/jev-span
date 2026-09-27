@@ -1,0 +1,1 @@
+{"method": "uie_m_base", "model": "paddlenlp/uie-m-base", "dataset": "crossner_music", "n": 200, "strict": [0.4462, 0.4808, 0.4629], "relaxed": [0.4984, 0.537, 0.517], "latency_avg_s": 0.1077, "device": "cuda"}

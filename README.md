@@ -18,7 +18,7 @@ Describe your entity types in one line each. No training data, no GPU, no fine-t
 
 Jev answers typed multiple-choice questions with calibrated probabilities, but it never returns entity spans on its own. **JevSpan turns it into an entity recognizer.** It cuts text at punctuation, offers every candidate window to Jev as an option, verifies what Jev nominates, and then lets Jev settle the exact boundaries and type. Every entity comes back with a probability and a trace of the questions that produced it.
 
-On **12 public NER benchmarks** (Chinese, English, and the five CrossNER domains), JevSpan averages **73.7 strict F1 fully zero-shot**. That is 1.6 points above prompting **Qwen3.8-27B** with the same type descriptions, at a third of its latency, and about 20 points above GLiNER and NuNER.
+On **12 public NER benchmarks** (Chinese, English, and the five CrossNER domains), JevSpan averages **73.7 strict F1 fully zero-shot**. That is 1.6 points above prompting **Qwen3.8-27B** with the same type descriptions, and 20+ points above Baidu UIE and GLiNER on the datasets none of them has seen.
 
 ```text
 $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后前往北京市海淀区中关村大街27号参观。"
@@ -39,40 +39,47 @@ $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后
 
 ## Benchmark
 
-Every method is zero-shot and sees the same 200 test sentences per dataset (fixed seed) and the same type descriptions. Strict F1 requires exact boundaries and the exact type.
+Every method is zero-shot and sees the same 200 test sentences per dataset (fixed seed) and the same type descriptions. Strict F1 requires exact boundaries and the exact type. All compared models have fewer than 30B parameters.
 
-| Method | Avg strict F1 (12 sets) | Avg (8 English sets) | Latency / doc | Cost / 1k docs | Runs on |
-|---|---:|---:|---:|---:|---|
-| **JevSpan (Jev 1.13)** | **73.7** | **73.9** | **0.53 s** | $0.64 | Jev API |
-| Qwen3.8-27B, direct extraction | 72.1 | 73.8 | 1.65 s | $0.28 | DashScope API |
-| Qwen3-8B, direct extraction | 55.7 | 55.9 | 1.10 s | ~$0.004 | RTX 3090 |
-| GLiNER2.5-multi | 50.4 | 54.4 | 0.02 s | ~$0.001 | GPU or CPU |
-| GLiNER-multi v2.1 | 47.0 | 55.0 | 0.02 s | ~$0.001 | GPU or CPU |
-| GLiNER-large v2.1 (English only) | – | 56.3 | 0.03 s | ~$0.002 | GPU or CPU |
-| NuNER-Zero (English only) | – | 56.4 | 0.03 s | ~$0.002 | GPU or CPU |
+| Method | Avg strict F1 (12 sets) | Avg (7 unseen sets) | Avg (8 English sets) |
+|---|---:|---:|---:|
+| **JevSpan (Jev 1.13)** | **73.7** | **72.9** | **73.9** |
+| Qwen3.8-27B, direct extraction | 72.1 | 69.8 | 73.8 |
+| Baidu UIE-m-base | 59.3\* | 44.9 | 57.5\* |
+| Qwen3-8B, direct extraction | 55.7 | 54.5 | 55.9 |
+| GLiNER2.5-multi | 50.4 | 47.7 | 54.4 |
+| GLM-4-9B, direct extraction | 47.9 | 47.1 | 52.2 |
+| GLiNER-multi v2.1 | 47.0 | 51.9 | 55.0 |
+| GLiNER-large v2.1 (English only) | – | – | 56.3 |
+| NuNER-Zero (English only) | – | – | 56.4 |
 
 <details>
 <summary><b>Strict F1 per dataset</b></summary>
 
 | Method | MSRA | Resume | CLUENER | Weibo | CoNLL03 | WNUT17 | MIT-Rest | CN-AI | CN-Lit | CN-Music | CN-Pol | CN-Sci |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| **JevSpan** | **82.1** | 88.4 | **67.5** | **55.4** | 82.0 | **56.6** | 65.4 | **72.0** | **74.8** | 79.9 | **83.2** | **77.7** |
-| Qwen3.8-27B | 72.0 | **90.0** | 63.6 | 48.9 | **86.2** | 54.0 | **73.8** | 69.2 | 72.5 | **81.0** | 76.8 | 76.9 |
+| **JevSpan** | 82.1 | 88.4 | **67.5** | **55.4** | 82.0 | **56.6** | 65.4 | **72.0** | **74.8** | 79.9 | **83.2** | **77.7** |
+| Qwen3.8-27B | 72.0 | 90.0 | 63.6 | 48.9 | 86.2 | 54.0 | 73.8 | 69.2 | 72.5 | **81.0** | 76.8 | 76.9 |
+| Baidu UIE-m-base | 84.2\* | 93.8\* | 41.1 | 33.0 | 87.2\* | 48.9 | 83.6\* | 38.4 | 50.6 | 46.3 | 54.1 | 50.9 |
 | Qwen3-8B | 62.2 | 68.5 | 55.9 | 35.5 | 74.8 | 38.8 | 43.4 | 53.2 | 52.4 | 70.7 | 56.5 | 57.2 |
 | GLiNER2.5-multi | 55.2 | 56.2 | 31.1 | 27.9 | 64.5 | 51.4 | 44.1 | 43.3 | 56.4 | 64.1 | 58.7 | 52.5 |
+| GLM-4-9B | 53.2 | 32.2 | 43.2 | 28.6 | 65.8 | 43.1 | 50.2 | 37.9 | 56.8 | 56.5 | 53.5 | 53.6 |
 | GLiNER-multi v2.1 | 50.5 | 21.1 | 30.3 | 22.5 | 58.4 | 43.3 | 27.8 | 47.3 | 62.6 | 71.5 | 66.5 | 62.3 |
 | NuNER-Zero | – | – | – | – | 59.1 | 41.6 | 35.9 | 50.7 | 60.4 | 70.2 | 72.3 | 60.8 |
 
-Bold marks the best score per dataset. Relaxed F1, precision, recall, per-dataset latency and cost, and hardware requirements are in [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md).
+Bold marks the best zero-shot score on datasets no method has trained on. Relaxed F1, precision, recall and hardware requirements are in [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md).
 
 </details>
 
+\* Baidu UIE was pre-trained on a large mix of public supervised extraction data that very likely includes MSRA, Resume, CoNLL03 and MIT-Restaurant, so those four scores are not zero-shot. The **7 unseen sets** are CLUENER, Weibo and the five CrossNER domains; no compared method was trained on them.
+
 **How to read it**
 
-- **Against Qwen3.8-27B:** JevSpan leads by 10 points on MSRA, 6.5 on Weibo, 6.4 on CrossNER politics, and 3.9 on CLUENER. It trails on CoNLL (−4.2) and MIT Restaurant (−8.4). It is about 3× faster per document and costs about 2.3× more.
-- **Against small open zero-shot models:** about 20 points ahead of GLiNER and NuNER, at API latency rather than local-GPU latency.
+- **Against Qwen3.8-27B:** JevSpan leads by 10 points on MSRA, 6.5 on Weibo, 6.4 on CrossNER politics, and 3.9 on CLUENER. It trails on CoNLL (−4.2) and MIT Restaurant (−8.4).
+- **Against dedicated zero-shot extractors:** on the 7 unseen sets JevSpan is 21 to 28 points ahead of Baidu UIE and GLiNER; on the five CrossNER domains it is about 15 points ahead of NuNER-Zero. UIE is strong only on the datasets it was pre-trained on.
+- **Against small general LLMs:** on the 7 unseen sets, prompting Qwen3-8B or GLM-4-9B directly is 18 to 26 points behind.
 
-<sub>Jev latency and cost: 30 sentences per dataset, no cache, one document at a time, at $0.042 per million input tokens. Qwen3.8-27B: DashScope Beijing list price, thinking disabled, 8 concurrent requests. Local models: RTX 3090, cost from rental price. Measured September 2026 with `jev-1.13.0`.</sub>
+<sub>Measured September 2026 with `jev-1.13.0`. LLMs received the same type descriptions and were asked for JSON; Qwen3.8-27B via DashScope with thinking disabled, GLM-4-9B via SiliconFlow, Qwen3-8B on vLLM. UIE via PaddleNLP Taskflow with the type names as prompts.</sub>
 
 ## Quick start
 
@@ -206,7 +213,10 @@ uv run python bench/run_jev.py --split test --tag accurate
 uv run python bench/run_jev.py --split test --limit 30 --no-cache --concurrency 1 --tag seq_accurate
 QWEN_API_KEY=... uv run python bench/llm_api_baseline.py --model qwen3.8-27b
 python bench/baselines_gpu.py --methods all          # GPU box with torch, transformers, gliner, gliner2
+SILICONFLOW_API_KEY=... uv run python bench/llm_api_baseline.py --model THUDM/GLM-4-9B-0414 --tag glm4_9b \
+    --base-url https://api.siliconflow.cn/v1 --api-key-env SILICONFLOW_API_KEY
 python bench/llm_baseline.py --model Qwen/Qwen3-8B   # GPU box with vLLM
+python bench/uie_baseline.py --model uie-m-base      # PaddlePaddle + PaddleNLP (Taskflow)
 uv run python bench/final_report.py > bench/results/FINAL_REPORT.md
 ```
 
@@ -217,7 +227,7 @@ The hand-written development sets in [`eval/`](eval) (70 sentences of people, or
 ## Limitations
 
 - **Spans come from the segmenter.** Jev only scores candidates, so an entity that no window covers cannot be found. Noisy social-media text (Weibo 55.4, WNUT 56.6) is where this ceiling shows most.
-- **It needs a network call.** Latency is about half a second per sentence-sized document. For millions of documents with a fixed label set, a fine-tuned encoder is faster and cheaper.
+- **It needs a network call.** Every document goes through the Jev API. For millions of documents with a fixed label set, a fine-tuned encoder is the better tool.
 - **Results move slightly between runs.** Jev's probabilities vary by about ±0.05, so close calls can flip. Pin the model version if you tune thresholds.
 - **Annotation conventions differ between datasets.** Whether a hotel is an organization or a location, or whether "Dr." belongs to a name, depends on the guideline. Write your convention into the schema.
 

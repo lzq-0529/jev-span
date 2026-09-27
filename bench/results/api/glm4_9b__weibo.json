@@ -1,0 +1,1 @@
+{"method": "glm4_9b", "model": "THUDM/GLM-4-9B-0414", "dataset": "weibo", "n": 200, "strict": [0.3405, 0.2461, 0.2857], "relaxed": [0.4397, 0.3178, 0.3689], "latency_avg_s": 3.893, "wall_s": 99.0, "usage": {"prompt_tokens": 61634, "completion_tokens": 4601, "dropped_params": []}}

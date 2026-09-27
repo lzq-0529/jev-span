@@ -17,7 +17,7 @@ from vllm.sampling_params import StructuredOutputsParams
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "src"))
-from baselines_gpu import ALL, load_items, score  # noqa: E402
+from bench_common import ALL, load_items, score  # noqa: E402
 from llm_common import PROMPT, json_schema, to_spans  # noqa: E402
 
 from jevspan.schema import Schema  # noqa: E402

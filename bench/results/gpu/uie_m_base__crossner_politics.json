@@ -1,0 +1,1 @@
+{"method": "uie_m_base", "model": "paddlenlp/uie-m-base", "dataset": "crossner_politics", "n": 200, "strict": [0.4557, 0.6644, 0.5406], "relaxed": [0.5163, 0.7527, 0.6125], "latency_avg_s": 0.0728, "device": "cuda"}

@@ -1,0 +1,1 @@
+{"method": "glm4_9b", "model": "THUDM/GLM-4-9B-0414", "dataset": "conll", "n": 200, "strict": [0.7953, 0.5607, 0.6577], "relaxed": [0.814, 0.5738, 0.6731], "latency_avg_s": 3.909, "wall_s": 98.9, "usage": {"prompt_tokens": 60478, "completion_tokens": 4109, "dropped_params": []}}

@@ -106,9 +106,10 @@ async def main() -> None:
     ap.add_argument("--datasets", nargs="*", default=ALL)
     ap.add_argument("--concurrency", type=int, default=8)
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--api-key-env", default="QWEN_API_KEY", help="environment variable holding the API key")
     args = ap.parse_args()
     tag = args.tag or args.model.replace(".", "_").replace("-", "_")
-    key = os.environ["QWEN_API_KEY"]
+    key = os.environ[args.api_key_env]
     out = HERE / "results" / "api"
     out.mkdir(parents=True, exist_ok=True)
     sem = asyncio.Semaphore(args.concurrency)

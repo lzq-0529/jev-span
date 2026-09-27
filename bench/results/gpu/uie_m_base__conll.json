@@ -1,0 +1,1 @@
+{"method": "uie_m_base", "model": "paddlenlp/uie-m-base", "dataset": "conll", "n": 200, "strict": [0.9361, 0.8164, 0.8722], "relaxed": [0.9398, 0.8197, 0.8757], "latency_avg_s": 0.0305, "device": "cuda"}

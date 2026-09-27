@@ -1,0 +1,1 @@
+{"method": "glm4_9b", "model": "THUDM/GLM-4-9B-0414", "dataset": "crossner_politics", "n": 200, "strict": [0.6207, 0.47, 0.535], "relaxed": [0.6826, 0.5169, 0.5883], "latency_avg_s": 4.515, "wall_s": 116.4, "usage": {"prompt_tokens": 71170, "completion_tokens": 18120, "dropped_params": []}}

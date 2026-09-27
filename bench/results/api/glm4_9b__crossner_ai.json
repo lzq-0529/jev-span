@@ -1,0 +1,1 @@
+{"method": "glm4_9b", "model": "THUDM/GLM-4-9B-0414", "dataset": "crossner_ai", "n": 200, "strict": [0.6167, 0.2731, 0.3785], "relaxed": [0.7, 0.31, 0.4297], "latency_avg_s": 4.09, "wall_s": 128.5, "usage": {"prompt_tokens": 84338, "completion_tokens": 7802, "dropped_params": []}}

@@ -18,7 +18,7 @@
 
 Jev 能回答带类型的选择题，并给出校准过的概率，但它自己不会返回实体的起止位置。**JevSpan 把它变成一个实体识别器。** 它按标点切分文本，把所有候选窗口作为选项交给 Jev，复核 Jev 提名的候选，再让 Jev 定下准确的边界和类型。每个实体都带着概率，以及产生它的完整问答过程。
 
-在 **12 个公开 NER 数据集**（中文、英文和 CrossNER 的 5 个领域）上，JevSpan **完全零样本**，严格 F1 平均 **73.7**。用同样的类型描述直接让 **Qwen3.8-27B** 抽取，平均是 72.1；JevSpan 高 1.6 个点，单条延迟只有它的 1/3，比 GLiNER 和 NuNER 高约 20 个点。
+在 **12 个公开 NER 数据集**（中文、英文和 CrossNER 的 5 个领域）上，JevSpan **完全零样本**，严格 F1 平均 **73.7**。用同样的类型描述直接让 **Qwen3.8-27B** 抽取，平均是 72.1；JevSpan 高 1.6 个点；在所有方法都没见过的数据集上，比百度 UIE 和 GLiNER 高 20 个点以上。
 
 ```text
 $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后前往北京市海淀区中关村大街27号参观。"
@@ -39,40 +39,47 @@ $ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后
 
 ## 基准测试
 
-所有方法都是零样本，用同一批测试句（每个数据集 200 条，固定随机种子）和同样的类型描述。严格 F1 要求边界和类型都完全正确。
+所有方法都是零样本，用同一批测试句（每个数据集 200 条，固定随机种子）和同样的类型描述。严格 F1 要求边界和类型都完全正确。参与对比的模型参数规模都在 30B 以下。
 
-| 方法 | 严格 F1：12 集平均 | 8 个英文集平均 | 单条延迟 | 每千条成本 | 运行环境 |
-|---|---:|---:|---:|---:|---|
-| **JevSpan（Jev 1.13）** | **73.7** | **73.9** | **0.53 秒** | $0.64 | Jev API |
-| Qwen3.8-27B 直接抽取 | 72.1 | 73.8 | 1.65 秒 | $0.28 | 百炼 API |
-| Qwen3-8B 直接抽取 | 55.7 | 55.9 | 1.10 秒 | ~$0.004 | RTX 3090 |
-| GLiNER2.5-multi | 50.4 | 54.4 | 0.02 秒 | ~$0.001 | GPU 或 CPU |
-| GLiNER-multi v2.1 | 47.0 | 55.0 | 0.02 秒 | ~$0.001 | GPU 或 CPU |
-| GLiNER-large v2.1（仅英文） | – | 56.3 | 0.03 秒 | ~$0.002 | GPU 或 CPU |
-| NuNER-Zero（仅英文） | – | 56.4 | 0.03 秒 | ~$0.002 | GPU 或 CPU |
+| 方法 | 严格 F1：12 集平均 | 7 个未见集平均 | 8 个英文集平均 |
+|---|---:|---:|---:|
+| **JevSpan（Jev 1.13）** | **73.7** | **72.9** | **73.9** |
+| Qwen3.8-27B 直接抽取 | 72.1 | 69.8 | 73.8 |
+| 百度 UIE-m-base | 59.3\* | 44.9 | 57.5\* |
+| Qwen3-8B 直接抽取 | 55.7 | 54.5 | 55.9 |
+| GLiNER2.5-multi | 50.4 | 47.7 | 54.4 |
+| GLM-4-9B 直接抽取 | 47.9 | 47.1 | 52.2 |
+| GLiNER-multi v2.1 | 47.0 | 51.9 | 55.0 |
+| GLiNER-large v2.1（仅英文） | – | – | 56.3 |
+| NuNER-Zero（仅英文） | – | – | 56.4 |
 
 <details>
 <summary><b>各数据集严格 F1</b></summary>
 
 | 方法 | MSRA | Resume | CLUENER | Weibo | CoNLL03 | WNUT17 | MIT-Rest | CN-AI | CN-文学 | CN-音乐 | CN-政治 | CN-科学 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| **JevSpan** | **82.1** | 88.4 | **67.5** | **55.4** | 82.0 | **56.6** | 65.4 | **72.0** | **74.8** | 79.9 | **83.2** | **77.7** |
-| Qwen3.8-27B | 72.0 | **90.0** | 63.6 | 48.9 | **86.2** | 54.0 | **73.8** | 69.2 | 72.5 | **81.0** | 76.8 | 76.9 |
+| **JevSpan** | 82.1 | 88.4 | **67.5** | **55.4** | 82.0 | **56.6** | 65.4 | **72.0** | **74.8** | 79.9 | **83.2** | **77.7** |
+| Qwen3.8-27B | 72.0 | 90.0 | 63.6 | 48.9 | 86.2 | 54.0 | 73.8 | 69.2 | 72.5 | **81.0** | 76.8 | 76.9 |
+| 百度 UIE-m-base | 84.2\* | 93.8\* | 41.1 | 33.0 | 87.2\* | 48.9 | 83.6\* | 38.4 | 50.6 | 46.3 | 54.1 | 50.9 |
 | Qwen3-8B | 62.2 | 68.5 | 55.9 | 35.5 | 74.8 | 38.8 | 43.4 | 53.2 | 52.4 | 70.7 | 56.5 | 57.2 |
 | GLiNER2.5-multi | 55.2 | 56.2 | 31.1 | 27.9 | 64.5 | 51.4 | 44.1 | 43.3 | 56.4 | 64.1 | 58.7 | 52.5 |
+| GLM-4-9B | 53.2 | 32.2 | 43.2 | 28.6 | 65.8 | 43.1 | 50.2 | 37.9 | 56.8 | 56.5 | 53.5 | 53.6 |
 | GLiNER-multi v2.1 | 50.5 | 21.1 | 30.3 | 22.5 | 58.4 | 43.3 | 27.8 | 47.3 | 62.6 | 71.5 | 66.5 | 62.3 |
 | NuNER-Zero | – | – | – | – | 59.1 | 41.6 | 35.9 | 50.7 | 60.4 | 70.2 | 72.3 | 60.8 |
 
-加粗是每个数据集的最高分。宽松 F1、精确率、召回率、各数据集的延迟和成本，以及硬件需求，见 [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md)。
+加粗是在所有方法都没训练过的数据集上的最高分。宽松 F1、精确率、召回率和硬件需求见 [`bench/results/FINAL_REPORT.md`](bench/results/FINAL_REPORT.md)。
 
 </details>
 
+\* 百度 UIE 的预训练使用了大量公开的有监督抽取数据，很可能包含 MSRA、Resume、CoNLL03 和 MIT-Restaurant，这 4 项不能视为零样本成绩。**7 个未见集**指 CLUENER、Weibo 和 CrossNER 的 5 个领域，参与对比的方法都没有在这些数据上训练过。
+
 **怎么看这些结果**
 
-- **和 Qwen3.8-27B 比：** MSRA 高 10 个点，Weibo 高 6.5 个点，CrossNER 政治高 6.4 个点，CLUENER 高 3.9 个点；CoNLL 低 4.2 个点，MIT Restaurant 低 8.4 个点。单条速度快约 3 倍，成本约为它的 2.3 倍。
-- **和开源零样本小模型比：** 比 GLiNER、NuNER 高约 20 个点，代价是 API 级的延迟，而不是本地 GPU 的毫秒级延迟。
+- **和 Qwen3.8-27B 比：** MSRA 高 10 个点，Weibo 高 6.5 个点，CrossNER 政治高 6.4 个点，CLUENER 高 3.9 个点；CoNLL 低 4.2 个点，MIT Restaurant 低 8.4 个点。
+- **和专用零样本抽取模型比：** 在 7 个未见集上，比百度 UIE 和 GLiNER 高 21 到 28 个点；在 CrossNER 的 5 个领域上，比 NuNER-Zero 高约 15 个点。UIE 只在它预训练见过的数据集上表现好。
+- **和 10B 以下的通用大模型比：** 在 7 个未见集上，直接让 Qwen3-8B、GLM-4-9B 抽取，低 18 到 26 个点。
 
-<sub>Jev 的延迟和成本：每个数据集 30 条，不用缓存，一次处理一条，按每百万输入 token $0.042 计费。Qwen3.8-27B：百炼北京区公开价格，关闭思考，8 路并发。本地模型：RTX 3090，按租用价格折算。2026 年 9 月使用 `jev-1.13.0` 测得。</sub>
+<sub>2026 年 9 月使用 `jev-1.13.0` 测得。大模型使用同样的类型描述并要求输出 JSON：Qwen3.8-27B 走百炼 API 并关闭思考，GLM-4-9B 走硅基流动 API，Qwen3-8B 用 vLLM 本地部署。UIE 使用 PaddleNLP Taskflow，以类型名作为提示。</sub>
 
 ## 快速开始
 
@@ -205,7 +212,10 @@ uv run python bench/run_jev.py --split test --tag accurate
 uv run python bench/run_jev.py --split test --limit 30 --no-cache --concurrency 1 --tag seq_accurate
 QWEN_API_KEY=... uv run python bench/llm_api_baseline.py --model qwen3.8-27b
 python bench/baselines_gpu.py --methods all          # 需要装有 torch、transformers、gliner、gliner2 的 GPU 机器
+SILICONFLOW_API_KEY=... uv run python bench/llm_api_baseline.py --model THUDM/GLM-4-9B-0414 --tag glm4_9b \
+    --base-url https://api.siliconflow.cn/v1 --api-key-env SILICONFLOW_API_KEY
 python bench/llm_baseline.py --model Qwen/Qwen3-8B   # 需要装有 vLLM 的 GPU 机器
+python bench/uie_baseline.py --model uie-m-base      # 需要 PaddlePaddle 和 PaddleNLP（Taskflow）
 uv run python bench/final_report.py > bench/results/FINAL_REPORT.md
 ```
 
@@ -216,7 +226,7 @@ uv run python bench/final_report.py > bench/results/FINAL_REPORT.md
 ## 局限
 
 - **候选片段来自切分规则。** Jev 只给候选打分，没有窗口覆盖到的实体就找不回来。噪声大的社交媒体文本（Weibo 55.4、WNUT 56.6）最能体现这个上限。
-- **需要联网调用。** 一条句子长度的文本大约半秒。如果要处理上百万条、类型又固定，微调的编码器模型更快也更便宜。
+- **需要联网调用。** 每条文本都要经过 Jev API。如果要处理上百万条、类型又固定，微调的编码器模型更合适。
 - **多次运行结果会有小幅波动。** Jev 的概率大约有 ±0.05 的浮动，接近平局的判断可能翻转。如果要调阈值，请固定模型版本。
 - **不同数据集的标注约定不同。** 酒店算机构还是地点、「博士」算不算人名的一部分，取决于标注规范。请把你的约定写进 schema。
 

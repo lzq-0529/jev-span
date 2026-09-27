@@ -29,13 +29,16 @@ API_PRICES = {
     "glm-5.3": (1.131, 3.958),
     "kimi-k2.6": (0.894, 3.713),
     "MiniMax-M2.5": (0.304, 1.213),
+    "THUDM/GLM-4-9B-0414": (0.086, 0.086),  # SiliconFlow
 }
 
 # key, display name, accuracy source, speed/cost source
 METHODS = [
     ("accurate", "Jev + our pipeline", ("jev", "accurate"), ("jev", "seq_accurate")),
     ("qwen27b", "Qwen3.8-27B prompt (API)", ("api", "qwen3_8_27b"), ("api", "qwen3_8_27b")),
+    ("glm9b", "GLM-4-9B prompt (SiliconFlow API)", ("api", "glm4_9b"), ("api", "glm4_9b")),
     ("qwen8b", "Qwen3-8B prompt (vLLM, 3090)", ("gpu", "qwen3_8b"), ("gpu", "qwen3_8b")),
+    ("uie", "Baidu UIE-m-base (schema-driven)", ("gpu", "uie_m_base"), ("gpu", "uie_m_base")),
     ("gliner25", "GLiNER2.5-multi", ("gpu", "gliner2.5"), ("gpu", "gliner2.5")),
     ("gliner_multi", "GLiNER-multi v2.1", ("gpu", "gliner_multi"), ("gpu", "gliner_multi")),
     ("gliner_large", "GLiNER-large v2.1 (EN only)", ("gpu", "gliner_large"), ("gpu", "gliner_large")),
@@ -45,6 +48,8 @@ METHODS = [
 RESOURCES = {
     "accurate": ("–", "–", "none (HTTPS client)", "Jev API", "type name + 1-line description"),
     "qwen27b": ("27B", "–", "none (HTTPS client)", "DashScope API", "same prompt / descriptions"),
+    "glm9b": ("9B", "–", "none (HTTPS client)", "SiliconFlow API", "same prompt / descriptions"),
+    "uie": ("~0.28B (ERNIE-M base)", "~1.1 GB", "–", "RTX 3090 (or CPU)", "type names as prompts"),
     "qwen8b": ("8.2B", "15.3 GB", "~21 GB (vLLM pre-allocates 90%)", "RTX 3090 24 GB", "same prompt / descriptions"),
     "gliner25": ("~0.29B", "1.1 GB", "2.8 GB", "RTX 3090 (or CPU)", "label + description"),
     "gliner_multi": ("~0.3B", "2.2 GB", "2.4 GB", "RTX 3090 (or CPU)", "label names"),
@@ -74,7 +79,7 @@ def pct(x):
 def per_doc_cost(key: str, r: dict) -> float | None:
     if key == "accurate":
         return r["usage"]["cost_usd"] / r["n"]
-    if key == "qwen27b":
+    if key in ("qwen27b", "glm9b"):
         pin, pout = API_PRICES[r["model"]]
         return (r["usage"]["prompt_tokens"] * pin + r["usage"]["completion_tokens"] * pout) / 1e6 / r["n"]
     if "throughput_docs_per_s" in r:

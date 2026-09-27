@@ -1,0 +1,1 @@
+{"method": "uie_m_base", "model": "paddlenlp/uie-m-base", "dataset": "crossner_literature", "n": 200, "strict": [0.4421, 0.593, 0.5065], "relaxed": [0.491, 0.6586, 0.5625], "latency_avg_s": 0.0963, "device": "cuda"}
