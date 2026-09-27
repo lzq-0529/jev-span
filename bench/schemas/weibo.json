@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "per_nam": {
+      "title": "人名",
+      "description": "具体人物的名字、昵称或艺名",
+      "examples": [
+        "刘德华",
+        "小明"
+      ],
+      "min_chars": 1
+    },
+    "per_nom": {
+      "title": "人物泛指",
+      "description": "指人的普通名词或称呼，如亲属、身份、群体",
+      "examples": [
+        "男朋友",
+        "网友",
+        "美女"
+      ]
+    },
+    "org_nam": {
+      "title": "机构名",
+      "description": "具体公司、学校、团体、品牌主体的名称",
+      "examples": [
+        "小米",
+        "北京大学"
+      ]
+    },
+    "org_nom": {
+      "title": "机构泛指",
+      "description": "指机构的普通名词",
+      "examples": [
+        "公司",
+        "学校",
+        "政府"
+      ]
+    },
+    "gpe_nam": {
+      "title": "行政区名",
+      "description": "国家、省、市、县等行政区划名称",
+      "examples": [
+        "中国",
+        "广州"
+      ]
+    },
+    "gpe_nom": {
+      "title": "行政区泛指",
+      "description": "指行政区划的普通名词",
+      "examples": [
+        "国家",
+        "城市",
+        "家乡"
+      ]
+    },
+    "loc_nam": {
+      "title": "地点名",
+      "description": "具体地点、景点、建筑、自然地理名称",
+      "examples": [
+        "西湖",
+        "天安门"
+      ]
+    },
+    "loc_nom": {
+      "title": "地点泛指",
+      "description": "指地点的普通名词",
+      "examples": [
+        "公园",
+        "机场",
+        "楼下"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+ "method": "qwen3_8b",
+ "model": "Qwen/Qwen3-8B",
+ "dataset": "crossner_literature",
+ "n": 200,
+ "strict": [
+  0.6047,
+  0.4618,
+  0.5237
+ ],
+ "relaxed": [
+  0.6506,
+  0.4969,
+  0.5634
+ ],
+ "latency_avg_s": 1.6713,
+ "throughput_docs_per_s": 14.87,
+ "device": "cuda"
+}

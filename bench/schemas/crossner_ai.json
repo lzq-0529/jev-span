@@ -1,0 +1,113 @@
+{
+  "entities": {
+    "algorithm": {
+      "title": "algorithm",
+      "description": "an algorithm, model or method",
+      "examples": [
+        "gradient descent",
+        "support vector machine"
+      ]
+    },
+    "conference": {
+      "title": "conference",
+      "description": "an academic conference or journal venue",
+      "examples": [
+        "NeurIPS",
+        "ICML"
+      ]
+    },
+    "country": {
+      "title": "country",
+      "description": "a country or nation state, including historical ones",
+      "examples": [
+        "France",
+        "Soviet Union"
+      ]
+    },
+    "field": {
+      "title": "field",
+      "description": "a research field or subfield",
+      "examples": [
+        "machine learning",
+        "computer vision"
+      ]
+    },
+    "location": {
+      "title": "location",
+      "description": "a geographic place that is not a country: city, region, province, river, mountain, constituency",
+      "examples": [
+        "Paris",
+        "Ontario"
+      ]
+    },
+    "metrics": {
+      "title": "metrics",
+      "description": "an evaluation metric or measure",
+      "examples": [
+        "F1 score",
+        "BLEU"
+      ]
+    },
+    "misc": {
+      "title": "miscellaneous",
+      "description": "any other named entity that fits none of the types above, e.g. nationality, language, religion, named object or work",
+      "examples": [
+        "German",
+        "Buddhism"
+      ]
+    },
+    "organisation": {
+      "title": "organisation",
+      "description": "an organisation, company, agency, court, army or institution that fits no more specific type",
+      "examples": [
+        "Red Cross",
+        "Google"
+      ]
+    },
+    "person": {
+      "title": "person",
+      "description": "a person who does not fit a more specific role type listed here",
+      "examples": [
+        "John Smith"
+      ]
+    },
+    "product": {
+      "title": "product",
+      "description": "a product, software system or tool",
+      "examples": [
+        "iPhone",
+        "TensorFlow"
+      ]
+    },
+    "programlang": {
+      "title": "programming language",
+      "description": "a programming language",
+      "examples": [
+        "Python",
+        "Lisp"
+      ]
+    },
+    "researcher": {
+      "title": "researcher",
+      "description": "a person known for research in AI or computer science",
+      "examples": [
+        "Geoffrey Hinton"
+      ]
+    },
+    "task": {
+      "title": "task",
+      "description": "a problem or task studied in AI",
+      "examples": [
+        "machine translation",
+        "image classification"
+      ]
+    },
+    "university": {
+      "title": "university",
+      "description": "a university or college",
+      "examples": [
+        "Stanford University"
+      ]
+    }
+  }
+}

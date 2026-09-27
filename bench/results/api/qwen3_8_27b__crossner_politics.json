@@ -1,0 +1,22 @@
+{
+ "method": "qwen3_8_27b",
+ "model": "qwen3.8-27b",
+ "dataset": "crossner_politics",
+ "n": 200,
+ "strict": [
+  0.7925,
+  0.745,
+  0.768
+ ],
+ "relaxed": [
+  0.8399,
+  0.7896,
+  0.8139
+ ],
+ "latency_avg_s": 2.675,
+ "wall_s": 68.3,
+ "usage": {
+  "prompt_tokens": 74481,
+  "completion_tokens": 26257
+ }
+}

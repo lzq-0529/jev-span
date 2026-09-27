@@ -1,0 +1,22 @@
+{
+ "method": "qwen3_8_27b",
+ "model": "qwen3.8-27b",
+ "dataset": "weibo",
+ "n": 200,
+ "strict": [
+  0.4373,
+  0.5545,
+  0.489
+ ],
+ "relaxed": [
+  0.5332,
+  0.676,
+  0.5962
+ ],
+ "latency_avg_s": 1.216,
+ "wall_s": 33.1,
+ "usage": {
+  "prompt_tokens": 63604,
+  "completion_tokens": 7834
+ }
+}

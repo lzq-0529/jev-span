@@ -1,0 +1,19 @@
+{
+ "method": "qwen3_8b",
+ "model": "Qwen/Qwen3-8B",
+ "dataset": "cluener",
+ "n": 200,
+ "strict": [
+  0.6536,
+  0.4887,
+  0.5593
+ ],
+ "relaxed": [
+  0.7651,
+  0.5721,
+  0.6546
+ ],
+ "latency_avg_s": 0.82,
+ "throughput_docs_per_s": 28.05,
+ "device": "cuda"
+}

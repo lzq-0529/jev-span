@@ -1,0 +1,19 @@
+{
+ "method": "finetuned",
+ "model": "dslim/bert-base-NER",
+ "dataset": "conll",
+ "n": 200,
+ "strict": [
+  0.9253,
+  0.9344,
+  0.9299
+ ],
+ "relaxed": [
+  0.9383,
+  0.9475,
+  0.9429
+ ],
+ "latency_avg_s": 0.0063,
+ "latency_p90_s": 0.0069,
+ "device": "NVIDIA GeForce RTX 3090"
+}

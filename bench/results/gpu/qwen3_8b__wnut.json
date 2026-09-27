@@ -1,0 +1,19 @@
+{
+ "method": "qwen3_8b",
+ "model": "Qwen/Qwen3-8B",
+ "dataset": "wnut",
+ "n": 200,
+ "strict": [
+  0.382,
+  0.3931,
+  0.3875
+ ],
+ "relaxed": [
+  0.4663,
+  0.4798,
+  0.4729
+ ],
+ "latency_avg_s": 0.4093,
+ "throughput_docs_per_s": 31.9,
+ "device": "cuda"
+}

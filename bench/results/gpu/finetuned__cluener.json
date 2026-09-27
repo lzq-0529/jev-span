@@ -1,0 +1,19 @@
+{
+ "method": "finetuned",
+ "model": "uer/roberta-base-finetuned-cluener2020-chinese",
+ "dataset": "cluener",
+ "n": 200,
+ "strict": [
+  0.6925,
+  0.705,
+  0.6987
+ ],
+ "relaxed": [
+  0.8319,
+  0.8468,
+  0.8393
+ ],
+ "latency_avg_s": 0.0069,
+ "latency_p90_s": 0.0073,
+ "device": "NVIDIA GeForce RTX 3090"
+}

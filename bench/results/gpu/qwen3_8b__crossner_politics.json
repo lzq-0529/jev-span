@@ -1,0 +1,19 @@
+{
+ "method": "qwen3_8b",
+ "model": "Qwen/Qwen3-8B",
+ "dataset": "crossner_politics",
+ "n": 200,
+ "strict": [
+  0.6327,
+  0.5108,
+  0.5652
+ ],
+ "relaxed": [
+  0.6851,
+  0.553,
+  0.612
+ ],
+ "latency_avg_s": 1.8564,
+ "throughput_docs_per_s": 11.45,
+ "device": "cuda"
+}

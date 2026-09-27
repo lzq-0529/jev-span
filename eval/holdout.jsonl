@@ -1,0 +1,30 @@
+{"id": "h-news-01", "text": "3月15日，中国消费者协会在北京发布报告，点名批评了多家电商平台。协会秘书长朱剑桥表示，将持续跟进。", "entities": [["中国消费者协会", "organization"], ["北京", "address"], ["朱剑桥", "person"]]}
+{"id": "h-bracket-01", "text": "甲方：阿里巴巴（中国）有限公司，乙方：杭州海康威视数字技术股份有限公司。", "entities": [["阿里巴巴（中国）有限公司", "organization"], ["杭州海康威视数字技术股份有限公司", "organization"]]}
+{"id": "h-express-01", "text": "收货人 张静怡 13912345678 福建省厦门市思明区鹭江道8号国际银行大厦", "entities": [["张静怡", "person"], ["福建省厦门市思明区鹭江道8号国际银行大厦", "address"]]}
+{"id": "h-common-word-01", "text": "高峰期间，高峰带着女儿高兴去了人民公园。", "entities": [["高峰", "person"], ["高兴", "person"], ["人民公园", "address"]]}
+{"id": "h-none-01", "text": "请在周五之前提交季度总结，并抄送给部门负责人。", "entities": []}
+{"id": "h-trad-01", "text": "台積電創辦人張忠謀昨日出席在新竹科學園區舉行的活動。", "entities": [["台積電", "organization"], ["張忠謀", "person"], ["新竹科學園區", "address"]]}
+{"id": "h-abbr-01", "text": "清华、北大、浙大的招生办负责人都到了现场。", "entities": [["清华", "organization"], ["北大", "organization"], ["浙大", "organization"]]}
+{"id": "h-long-01", "text": "2025年，比亚迪股份有限公司在匈牙利塞格德建设的整车工厂正式投产，董事长王传福出席仪式并与当地官员交流。", "entities": [["比亚迪股份有限公司", "organization"], ["匈牙利塞格德", "address"], ["王传福", "person"]]}
+{"id": "h-form-01", "text": "【报名信息】姓名：诸葛明亮；学校：华中科技大学；籍贯：湖北省襄阳市。", "entities": [["诸葛明亮", "person"], ["华中科技大学", "organization"], ["湖北省襄阳市", "address"]]}
+{"id": "h-none-02", "text": "价格：¥299，库存：12件，颜色：深空灰。", "entities": []}
+{"id": "h-hotel-01", "text": "我们入住了三亚亚特兰蒂斯酒店，第二天去了蜈支洲岛。", "entities": [["三亚亚特兰蒂斯酒店", "organization"], ["蜈支洲岛", "address"]]}
+{"id": "h-en-01", "text": "Satya Nadella told reporters in Seattle that Microsoft would invest heavily in India.", "entities": [["Satya Nadella", "person"], ["Seattle", "address"], ["Microsoft", "organization"], ["India", "address"]]}
+{"id": "h-en-02", "text": "Ship to: Maria Garcia, 1600 Amphitheatre Parkway, Mountain View, CA 94043.", "entities": [["Maria Garcia", "person"], ["1600 Amphitheatre Parkway, Mountain View, CA 94043", "address"]]}
+{"id": "h-en-none-01", "text": "Thanks for your patience; we will get back to you within two business days.", "entities": []}
+{"id": "h-court-01", "text": "原告李建华诉被告深圳市某某科技有限公司劳动争议一案，由广东省深圳市南山区人民法院审理。", "entities": [["李建华", "person"], ["深圳市某某科技有限公司", "organization"], ["广东省深圳市南山区人民法院", "organization"]]}
+{"id": "h-sports-01", "text": "梅西随阿根廷队在卡塔尔夺得世界杯冠军。", "entities": [["梅西", "person"], ["阿根廷队", "organization"], ["卡塔尔", "address"]]}
+{"id": "h-medical-01", "text": "患者由四川大学华西医院转诊，主治医师为刘伟东。", "entities": [["四川大学华西医院", "organization"], ["刘伟东", "person"]]}
+{"id": "h-list-01", "text": "本次巡演途经西安、重庆、武汉、长沙四座城市。", "entities": [["西安", "address"], ["重庆", "address"], ["武汉", "address"], ["长沙", "address"]]}
+{"id": "h-mixed-01", "text": "他在Amazon西雅图总部工作了五年，后来加入了字节跳动的TikTok团队。", "entities": [["Amazon", "organization"], ["西雅图", "address"], ["字节跳动", "organization"]]}
+{"id": "h-none-03", "text": "如果明天不下雨，我们就去爬山，顺便拍点照片。", "entities": []}
+{"id": "h-gov-01", "text": "据国务院新闻办公室消息，国家发展和改革委员会将于下周召开新闻发布会。", "entities": [["国务院新闻办公室", "organization"], ["国家发展和改革委员会", "organization"]]}
+{"id": "h-address-01", "text": "新地址为：重庆市渝中区解放碑民权路28号英利国际金融中心45层。", "entities": [["重庆市渝中区解放碑民权路28号英利国际金融中心45层", "address"]]}
+{"id": "h-foreign-01", "text": "埃隆·马斯克在得克萨斯州奥斯汀接受了采访。", "entities": [["埃隆·马斯克", "person"], ["得克萨斯州奥斯汀", "address"]]}
+{"id": "h-letter-01", "text": "尊敬的王总：您好！感谢贵公司长期以来对上海汽车集团股份有限公司的支持。", "entities": [["上海汽车集团股份有限公司", "organization"]]}
+{"id": "h-school-01", "text": "女儿今年考上了北京市第四中学，儿子还在海淀区中关村第一小学读书。", "entities": [["北京市第四中学", "organization"], ["海淀区中关村第一小学", "organization"]]}
+{"id": "h-quote-01", "text": "“我们会坚持下去。”宁德时代董事长曾毓群在福建宁德说。", "entities": [["宁德时代", "organization"], ["曾毓群", "person"], ["福建宁德", "address"]]}
+{"id": "h-none-04", "text": "第三章 数据预处理与特征工程", "entities": []}
+{"id": "h-multi-01", "text": "刘备、关羽、张飞在涿郡桃园结义。", "entities": [["刘备", "person"], ["关羽", "person"], ["张飞", "person"], ["涿郡", "address"]]}
+{"id": "h-ngo-01", "text": "中国红十字会总会向云南省昭通市鲁甸县灾区捐赠了物资。", "entities": [["中国红十字会总会", "organization"], ["云南省昭通市鲁甸县", "address"]]}
+{"id": "h-en-03", "text": "The United Nations held an emergency session in Geneva after Secretary-General António Guterres called for a ceasefire.", "entities": [["United Nations", "organization"], ["Geneva", "address"], ["António Guterres", "person"]]}

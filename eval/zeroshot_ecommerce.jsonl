@@ -1,0 +1,12 @@
+{"id": "e-01", "text": "Apple iPhone 16 Pro 256GB 售价7999元。", "entities": [["Apple", "brand"], ["iPhone 16 Pro", "product"], ["7999元", "price"]]}
+{"id": "e-02", "text": "华为Mate 70今天开售，起售价5499元。", "entities": [["华为", "brand"], ["Mate 70", "product"], ["5499元", "price"]]}
+{"id": "e-03", "text": "这款戴森V12吸尘器打完折只要3290元。", "entities": [["戴森", "brand"], ["V12", "product"], ["3290元", "price"]]}
+{"id": "e-04", "text": "小米SU7的订单已经排到明年。", "entities": [["小米", "brand"], ["SU7", "product"]]}
+{"id": "e-05", "text": "请问这个包邮吗？什么时候发货？", "entities": []}
+{"id": "e-06", "text": "耐克Air Force 1白色款，原价899元，现价599元。", "entities": [["耐克", "brand"], ["Air Force 1", "product"], ["899元", "price"], ["599元", "price"]]}
+{"id": "e-07", "text": "我更喜欢索尼WH-1000XM5的降噪效果。", "entities": [["索尼", "brand"], ["WH-1000XM5", "product"]]}
+{"id": "e-08", "text": "Nintendo Switch 2 is priced at $449.99 in the US.", "entities": [["Nintendo", "brand"], ["Switch 2", "product"], ["$449.99", "price"]]}
+{"id": "e-09", "text": "李宁的超轻21跑鞋在双十一卖了十万双。", "entities": [["李宁", "brand"], ["超轻21", "product"]]}
+{"id": "e-10", "text": "物流太慢了，快递三天还没到。", "entities": []}
+{"id": "e-11", "text": "特斯拉Model Y焕新版售价26.39万元起。", "entities": [["特斯拉", "brand"], ["Model Y", "product"], ["26.39万元", "price"]]}
+{"id": "e-12", "text": "佳能EOS R6 Mark II机身价格约14999元。", "entities": [["佳能", "brand"], ["EOS R6 Mark II", "product"], ["14999元", "price"]]}

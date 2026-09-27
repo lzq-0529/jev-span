@@ -1,0 +1,8 @@
+{
+  "entities": {
+    "per": {"title": "person", "description": "name of a person (real or fictional), without titles", "examples": ["Angela Merkel", "Smith"]},
+    "loc": {"title": "location", "description": "country, city, region, geographic place or address", "examples": ["Germany", "New York", "Europe"]},
+    "org": {"title": "organization", "description": "company, sports team, government body, political party, agency, institution or club", "examples": ["Microsoft", "Manchester United", "Reuters", "UN"]},
+    "misc": {"title": "miscellaneous", "description": "other named entity: nationality or demonym, language, religion, event, competition, product, work title", "examples": ["German", "World Cup", "Olympics", "Windows"]}
+  }
+}

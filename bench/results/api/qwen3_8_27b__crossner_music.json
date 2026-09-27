@@ -1,0 +1,22 @@
+{
+ "method": "qwen3_8_27b",
+ "model": "qwen3.8-27b",
+ "dataset": "crossner_music",
+ "n": 200,
+ "strict": [
+  0.8326,
+  0.7881,
+  0.8097
+ ],
+ "relaxed": [
+  0.8739,
+  0.8272,
+  0.8499
+ ],
+ "latency_avg_s": 2.611,
+ "wall_s": 66.4,
+ "usage": {
+  "prompt_tokens": 86632,
+  "completion_tokens": 28775
+ }
+}

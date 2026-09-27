@@ -1,0 +1,19 @@
+{
+ "method": "finetuned",
+ "model": "PassbyGrocer/hreb-resume",
+ "dataset": "resume",
+ "n": 200,
+ "strict": [
+  0.959,
+  0.9618,
+  0.9604
+ ],
+ "relaxed": [
+  0.9854,
+  0.9883,
+  0.9868
+ ],
+ "latency_avg_s": 0.0126,
+ "latency_p90_s": 0.014,
+ "device": "NVIDIA GeForce RTX 3090"
+}

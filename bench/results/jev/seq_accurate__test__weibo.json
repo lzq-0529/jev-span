@@ -1,0 +1,29 @@
+{
+ "dataset": "weibo",
+ "split": "test",
+ "n": 30,
+ "strict": [
+  0.4205,
+  0.6981,
+  0.5248
+ ],
+ "relaxed": [
+  0.4659,
+  0.7736,
+  0.5816
+ ],
+ "usage": {
+  "requests": 154,
+  "questions": 730,
+  "input_tokens": 531676,
+  "cost_usd": 0.022331,
+  "cache_hits": 0
+ },
+ "cost_per_1k_docs": 0.7444,
+ "wall_s": 14.52,
+ "latency_avg_s": 0.484,
+ "latency_p90_s": 0.688,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

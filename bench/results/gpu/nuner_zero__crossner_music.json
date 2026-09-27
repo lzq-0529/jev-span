@@ -1,0 +1,19 @@
+{
+ "method": "nuner_zero",
+ "model": "numind/NuNER_Zero",
+ "dataset": "crossner_music",
+ "n": 200,
+ "strict": [
+  0.707,
+  0.6968,
+  0.7019
+ ],
+ "relaxed": [
+  0.7905,
+  0.7791,
+  0.7848
+ ],
+ "latency_avg_s": 0.0332,
+ "latency_p90_s": 0.0348,
+ "device": "NVIDIA GeForce RTX 3090"
+}

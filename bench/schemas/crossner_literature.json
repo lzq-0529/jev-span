@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "award": {
+      "title": "award",
+      "description": "a named award, prize or honour",
+      "examples": [
+        "Nobel Prize in Physics",
+        "Grammy Award"
+      ]
+    },
+    "book": {
+      "title": "book",
+      "description": "title of a book or novel",
+      "examples": [
+        "Pride and Prejudice"
+      ]
+    },
+    "country": {
+      "title": "country",
+      "description": "a country or nation state, including historical ones",
+      "examples": [
+        "France",
+        "Soviet Union"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "description": "a named event such as a war, festival, conference or ceremony",
+      "examples": [
+        "World War II",
+        "Woodstock"
+      ]
+    },
+    "literarygenre": {
+      "title": "literary genre",
+      "description": "a genre of literature",
+      "examples": [
+        "science fiction",
+        "poetry"
+      ]
+    },
+    "location": {
+      "title": "location",
+      "description": "a geographic place that is not a country: city, region, province, river, mountain, constituency",
+      "examples": [
+        "Paris",
+        "Ontario"
+      ]
+    },
+    "magazine": {
+      "title": "magazine",
+      "description": "a magazine, newspaper or periodical",
+      "examples": [
+        "The New Yorker"
+      ]
+    },
+    "misc": {
+      "title": "miscellaneous",
+      "description": "any other named entity that fits none of the types above, e.g. nationality, language, religion, named object or work",
+      "examples": [
+        "German",
+        "Buddhism"
+      ]
+    },
+    "organisation": {
+      "title": "organisation",
+      "description": "an organisation, company, agency, court, army or institution that fits no more specific type",
+      "examples": [
+        "Red Cross",
+        "Google"
+      ]
+    },
+    "person": {
+      "title": "person",
+      "description": "a person who does not fit a more specific role type listed here",
+      "examples": [
+        "John Smith"
+      ]
+    },
+    "poem": {
+      "title": "poem",
+      "description": "title of a poem",
+      "examples": [
+        "The Raven"
+      ]
+    },
+    "writer": {
+      "title": "writer",
+      "description": "a person known as an author, novelist, poet or playwright",
+      "examples": [
+        "Jane Austen"
+      ]
+    }
+  }
+}

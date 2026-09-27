@@ -1,0 +1,40 @@
+{"id": "news-01", "text": "据新华社报道，国家统计局局长康义在北京出席了发布会。", "entities": [["新华社", "organization"], ["国家统计局", "organization"], ["康义", "person"], ["北京", "address"]]}
+{"id": "express-01", "text": "收件人：李秀英，电话：13800138000，地址：浙江省杭州市西湖区文三路90号东部软件园3号楼。", "entities": [["李秀英", "person"], ["浙江省杭州市西湖区文三路90号东部软件园3号楼", "address"]]}
+{"id": "resume-01", "text": "我叫陈晓明，毕业于复旦大学，目前在上海浦东发展银行担任客户经理。", "entities": [["陈晓明", "person"], ["复旦大学", "organization"], ["上海浦东发展银行", "organization"]]}
+{"id": "none-01", "text": "今天天气不错，我们下午三点开会讨论第二季度的预算。", "entities": []}
+{"id": "company-01", "text": "华为技术有限公司总部位于广东省深圳市龙岗区坂田街道。", "entities": [["华为技术有限公司", "organization"], ["广东省深圳市龙岗区坂田街道", "address"]]}
+{"id": "event-01", "text": "欢迎各位嘉宾莅临！本次论坛由中国科学院自动化研究所与南京大学联合主办。", "entities": [["中国科学院自动化研究所", "organization"], ["南京大学", "organization"]]}
+{"id": "complaint-01", "text": "投诉：我在京东商城买的手机有质量问题，客服刘芳一直不回复。", "entities": [["京东商城", "organization"], ["刘芳", "person"]]}
+{"id": "list-01", "text": "周杰伦、林俊杰和邓紫棋将于十月在成都举办联合演唱会。", "entities": [["周杰伦", "person"], ["林俊杰", "person"], ["邓紫棋", "person"], ["成都", "address"]]}
+{"id": "express-02", "text": "寄件地址：江苏省南京市鼓楼区汉口路22号；寄件人：赵磊。", "entities": [["江苏省南京市鼓楼区汉口路22号", "address"], ["赵磊", "person"]]}
+{"id": "bio-01", "text": "北京协和医院的张孝骞教授被誉为消化病学的奠基人。", "entities": [["北京协和医院", "organization"], ["张孝骞", "person"]]}
+{"id": "express-03", "text": "请将发票寄到广州市天河区珠江新城华夏路10号富力中心28楼，收件人黄海涛。", "entities": [["广州市天河区珠江新城华夏路10号富力中心28楼", "address"], ["黄海涛", "person"]]}
+{"id": "company-02", "text": "阿里巴巴集团和蚂蚁集团的年度报告均已发布。", "entities": [["阿里巴巴集团", "organization"], ["蚂蚁集团", "organization"]]}
+{"id": "none-02", "text": "会议纪要：2026年9月20日，项目组在会议室讨论了上线计划，无其他事项。", "entities": []}
+{"id": "bio-02", "text": "王小丫，女，1980年出生于四川省成都市，现任中央电视台主持人。", "entities": [["王小丫", "person"], ["四川省成都市", "address"], ["中央电视台", "organization"]]}
+{"id": "news-02", "text": "小米科技有限责任公司创始人雷军今天在武汉大学发表演讲。", "entities": [["小米科技有限责任公司", "organization"], ["雷军", "person"], ["武汉大学", "organization"]]}
+{"id": "letter-01", "text": "兹证明孙丽丽同志系我单位职工，特此证明。\n上海市第一人民医院 人事处", "entities": [["孙丽丽", "person"], ["上海市第一人民医院", "organization"]]}
+{"id": "form-01", "text": "姓名 刘洋 单位 中国航天科技集团有限公司 住址 陕西省西安市长安区航天大道", "entities": [["刘洋", "person"], ["中国航天科技集团有限公司", "organization"], ["陕西省西安市长安区航天大道", "address"]]}
+{"id": "travel-01", "text": "他从深圳坐高铁去了香港，第二天又飞往新加坡。", "entities": [["深圳", "address"], ["香港", "address"], ["新加坡", "address"]]}
+{"id": "history-01", "text": "李白是唐代著名诗人，杜甫与他齐名。", "entities": [["李白", "person"], ["杜甫", "person"]]}
+{"id": "list-02", "text": "腾讯公司、百度公司、字节跳动三家企业参与了本次招标。", "entities": [["腾讯公司", "organization"], ["百度公司", "organization"], ["字节跳动", "organization"]]}
+{"id": "form-02", "text": "申请人：欧阳娜娜（身份证号：110101199003071234），联系地址：北京市朝阳区建国路88号SOHO现代城A座1203室。", "entities": [["欧阳娜娜", "person"], ["北京市朝阳区建国路88号SOHO现代城A座1203室", "address"]]}
+{"id": "product-01", "text": "本产品由浙江农夫山泉股份有限公司生产，产地：浙江省淳安县千岛湖镇。", "entities": [["浙江农夫山泉股份有限公司", "organization"], ["浙江省淳安县千岛湖镇", "address"]]}
+{"id": "story-01", "text": "张三丰创立了武当派。", "entities": [["张三丰", "person"], ["武当派", "organization"]]}
+{"id": "none-03", "text": "明天早上八点记得带上身份证和护照。", "entities": []}
+{"id": "news-03", "text": "美国总统拜登与日本首相岸田文雄在华盛顿举行会谈。", "entities": [["美国", "address"], ["拜登", "person"], ["日本", "address"], ["岸田文雄", "person"], ["华盛顿", "address"]]}
+{"id": "hospital-01", "text": "上海交通大学医学院附属瑞金医院位于上海市黄浦区瑞金二路197号。", "entities": [["上海交通大学医学院附属瑞金医院", "organization"], ["上海市黄浦区瑞金二路197号", "address"]]}
+{"id": "thanks-01", "text": "感谢招商银行深圳分行的周敏经理对本项目的支持。", "entities": [["招商银行深圳分行", "organization"], ["周敏", "person"]]}
+{"id": "shop-01", "text": "新店地址：成都市锦江区春熙路步行街；店长：何佳。营业时间：10:00-22:00。", "entities": [["成都市锦江区春熙路步行街", "address"], ["何佳", "person"]]}
+{"id": "book-01", "text": "这本书的作者是余华，由作家出版社出版。", "entities": [["余华", "person"], ["作家出版社", "organization"]]}
+{"id": "logistics-01", "text": "订单已从广东省东莞市发出，预计三天后送达湖南省长沙市岳麓区。", "entities": [["广东省东莞市", "address"], ["湖南省长沙市岳麓区", "address"]]}
+{"id": "en-01", "text": "Tim Cook announced that Apple will open a new office in Austin, Texas.", "entities": [["Tim Cook", "person"], ["Apple", "organization"], ["Austin, Texas", "address"]]}
+{"id": "en-02", "text": "Please send the contract to Jane Smith at Goldman Sachs, 200 West Street, New York.", "entities": [["Jane Smith", "person"], ["Goldman Sachs", "organization"], ["200 West Street, New York", "address"]]}
+{"id": "en-none-01", "text": "The meeting was postponed until next Tuesday.", "entities": []}
+{"id": "en-03", "text": "Dr. Anthony Fauci worked at the National Institutes of Health for decades.", "entities": [["Anthony Fauci", "person"], ["National Institutes of Health", "organization"]]}
+{"id": "en-04", "text": "Microsoft and OpenAI signed a new agreement in Redmond.", "entities": [["Microsoft", "organization"], ["OpenAI", "organization"], ["Redmond", "address"]]}
+{"id": "mixed-01", "text": "我们在北京见到了Google的前高管李开复。", "entities": [["北京", "address"], ["Google", "organization"], ["李开复", "person"]]}
+{"id": "mixed-02", "text": "特斯拉CEO马斯克宣布将在上海临港新片区扩建超级工厂。", "entities": [["特斯拉", "organization"], ["马斯克", "person"], ["上海临港新片区", "address"]]}
+{"id": "none-04", "text": "联系邮箱：service@example.com，客服热线：400-800-1234。", "entities": []}
+{"id": "gov-01", "text": "中华人民共和国外交部发言人毛宁在例行记者会上回答了提问。", "entities": [["中华人民共和国外交部", "organization"], ["毛宁", "person"]]}
+{"id": "family-01", "text": "我老家在河南省洛阳市栾川县，爸爸叫王富贵，在县第一中学当老师。", "entities": [["河南省洛阳市栾川县", "address"], ["王富贵", "person"], ["县第一中学", "organization"]]}

@@ -1,0 +1,19 @@
+{
+ "method": "qwen3_8b",
+ "model": "Qwen/Qwen3-8B",
+ "dataset": "mitres",
+ "n": 200,
+ "strict": [
+  0.6927,
+  0.3159,
+  0.4339
+ ],
+ "relaxed": [
+  0.875,
+  0.399,
+  0.5481
+ ],
+ "latency_avg_s": 0.4139,
+ "throughput_docs_per_s": 32.58,
+ "device": "cuda"
+}

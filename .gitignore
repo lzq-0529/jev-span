@@ -1,0 +1,13 @@
+__pycache__/
+*.py[oc]
+build/
+dist/
+*.egg-info
+.venv/
+.pytest_cache/
+.env
+.cache/
+agent-tools/
+eval/runs/
+bench/data/
+bench/sets/

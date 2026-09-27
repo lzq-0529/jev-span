@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "album": {
+      "title": "album",
+      "description": "title of a music album",
+      "examples": [
+        "Abbey Road"
+      ]
+    },
+    "award": {
+      "title": "award",
+      "description": "a named award, prize or honour",
+      "examples": [
+        "Nobel Prize in Physics",
+        "Grammy Award"
+      ]
+    },
+    "band": {
+      "title": "band",
+      "description": "a musical group or band",
+      "examples": [
+        "The Beatles"
+      ]
+    },
+    "country": {
+      "title": "country",
+      "description": "a country or nation state, including historical ones",
+      "examples": [
+        "France",
+        "Soviet Union"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "description": "a named event such as a war, festival, conference or ceremony",
+      "examples": [
+        "World War II",
+        "Woodstock"
+      ]
+    },
+    "location": {
+      "title": "location",
+      "description": "a geographic place that is not a country: city, region, province, river, mountain, constituency",
+      "examples": [
+        "Paris",
+        "Ontario"
+      ]
+    },
+    "misc": {
+      "title": "miscellaneous",
+      "description": "any other named entity that fits none of the types above, e.g. nationality, language, religion, named object or work",
+      "examples": [
+        "German",
+        "Buddhism"
+      ]
+    },
+    "musicalartist": {
+      "title": "musical artist",
+      "description": "a singer, musician, composer or rapper",
+      "examples": [
+        "Adele"
+      ]
+    },
+    "musicalinstrument": {
+      "title": "musical instrument",
+      "description": "a musical instrument",
+      "examples": [
+        "guitar",
+        "violin"
+      ]
+    },
+    "musicgenre": {
+      "title": "music genre",
+      "description": "a genre of music",
+      "examples": [
+        "jazz",
+        "hip hop"
+      ]
+    },
+    "organisation": {
+      "title": "organisation",
+      "description": "an organisation, company, agency, court, army or institution that fits no more specific type",
+      "examples": [
+        "Red Cross",
+        "Google"
+      ]
+    },
+    "person": {
+      "title": "person",
+      "description": "a person who does not fit a more specific role type listed here",
+      "examples": [
+        "John Smith"
+      ]
+    },
+    "song": {
+      "title": "song",
+      "description": "title of a song or single",
+      "examples": [
+        "Yesterday"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "entities": {
+    "brand": {
+      "title": "品牌",
+      "description": "商品的品牌或厂商名称，单独标出，不和型号连在一起",
+      "examples": ["苹果", "Nike", "海尔"]
+    },
+    "product": {
+      "title": "产品型号",
+      "description": "具体的产品名称或型号本身，不含品牌、品类词（手机/鞋/吸尘器等）、版本后缀（新款/焕新版等）和容量颜色规格",
+      "examples": ["iPhone 15", "Mate 60 Pro", "Air Jordan 1"],
+      "counter_examples": ["苹果iPhone 15", "Air Jordan 1篮球鞋", "Mate 60 Pro新款"]
+    },
+    "price": {
+      "title": "价格",
+      "description": "商品的价格金额本身，包含货币单位或符号，不含 约/起/只要 等修饰词",
+      "examples": ["299元", "$19.99", "1.2万元"]
+    }
+  }
+}

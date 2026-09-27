@@ -1,0 +1,29 @@
+{
+ "dataset": "mitres",
+ "split": "test",
+ "n": 200,
+ "strict": [
+  0.7167,
+  0.601,
+  0.6537
+ ],
+ "relaxed": [
+  0.8669,
+  0.7268,
+  0.7907
+ ],
+ "usage": {
+  "requests": 481,
+  "questions": 807,
+  "input_tokens": 461405,
+  "cost_usd": 0.019379,
+  "cache_hits": 1207
+ },
+ "cost_per_1k_docs": 0.0969,
+ "wall_s": 13.13,
+ "latency_avg_s": 0.387,
+ "latency_p90_s": 0.575,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

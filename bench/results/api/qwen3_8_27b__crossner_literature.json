@@ -1,0 +1,22 @@
+{
+ "method": "qwen3_8_27b",
+ "model": "qwen3.8-27b",
+ "dataset": "crossner_literature",
+ "n": 200,
+ "strict": [
+  0.7865,
+  0.6721,
+  0.7248
+ ],
+ "relaxed": [
+  0.8244,
+  0.7044,
+  0.7597
+ ],
+ "latency_avg_s": 2.115,
+ "wall_s": 53.8,
+ "usage": {
+  "prompt_tokens": 84734,
+  "completion_tokens": 20235
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "method": "qwen3_8b",
+ "model": "Qwen/Qwen3-8B",
+ "dataset": "crossner_music",
+ "n": 200,
+ "strict": [
+  0.764,
+  0.6571,
+  0.7065
+ ],
+ "relaxed": [
+  0.8126,
+  0.6989,
+  0.7515
+ ],
+ "latency_avg_s": 2.2296,
+ "throughput_docs_per_s": 12.38,
+ "device": "cuda"
+}

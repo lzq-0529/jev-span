@@ -1,0 +1,29 @@
+{
+ "dataset": "crossner_literature",
+ "split": "test",
+ "n": 30,
+ "strict": [
+  0.7531,
+  0.7135,
+  0.7327
+ ],
+ "relaxed": [
+  0.8025,
+  0.7602,
+  0.7808
+ ],
+ "usage": {
+  "requests": 140,
+  "questions": 1156,
+  "input_tokens": 637752,
+  "cost_usd": 0.026785,
+  "cache_hits": 0
+ },
+ "cost_per_1k_docs": 0.8928,
+ "wall_s": 18.41,
+ "latency_avg_s": 0.614,
+ "latency_p90_s": 0.743,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

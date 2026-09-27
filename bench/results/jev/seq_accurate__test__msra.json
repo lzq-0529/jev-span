@@ -1,0 +1,29 @@
+{
+ "dataset": "msra",
+ "split": "test",
+ "n": 30,
+ "strict": [
+  0.8462,
+  0.7097,
+  0.7719
+ ],
+ "relaxed": [
+  0.8846,
+  0.7419,
+  0.807
+ ],
+ "usage": {
+  "requests": 71,
+  "questions": 242,
+  "input_tokens": 260521,
+  "cost_usd": 0.010942,
+  "cache_hits": 0
+ },
+ "cost_per_1k_docs": 0.3647,
+ "wall_s": 11.15,
+ "latency_avg_s": 0.372,
+ "latency_p90_s": 0.498,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

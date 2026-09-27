@@ -1,0 +1,72 @@
+{
+  "entities": {
+    "country": {
+      "title": "country",
+      "description": "a country or nation state, including historical ones",
+      "examples": [
+        "France",
+        "Soviet Union"
+      ]
+    },
+    "election": {
+      "title": "election",
+      "description": "a named election",
+      "examples": [
+        "2010 UK general election"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "description": "a named event such as a war, festival, conference or ceremony",
+      "examples": [
+        "World War II",
+        "Woodstock"
+      ]
+    },
+    "location": {
+      "title": "location",
+      "description": "a geographic place that is not a country: city, region, province, river, mountain, constituency",
+      "examples": [
+        "Paris",
+        "Ontario"
+      ]
+    },
+    "misc": {
+      "title": "miscellaneous",
+      "description": "any other named entity that fits none of the types above, e.g. nationality, language, religion, named object or work",
+      "examples": [
+        "German",
+        "Buddhism"
+      ]
+    },
+    "organisation": {
+      "title": "organisation",
+      "description": "an organisation, company, agency, court, army or institution that fits no more specific type",
+      "examples": [
+        "Red Cross",
+        "Google"
+      ]
+    },
+    "person": {
+      "title": "person",
+      "description": "a person who does not fit a more specific role type listed here",
+      "examples": [
+        "John Smith"
+      ]
+    },
+    "politicalparty": {
+      "title": "political party",
+      "description": "a political party",
+      "examples": [
+        "Labour Party"
+      ]
+    },
+    "politician": {
+      "title": "politician",
+      "description": "a person active in politics: head of state, minister, legislator, party leader",
+      "examples": [
+        "Angela Merkel"
+      ]
+    }
+  }
+}

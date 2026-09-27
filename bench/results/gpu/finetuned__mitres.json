@@ -1,0 +1,19 @@
+{
+ "method": "finetuned",
+ "model": "tner/roberta-large-mit-restaurant",
+ "dataset": "mitres",
+ "n": 200,
+ "strict": [
+  0.8083,
+  0.8314,
+  0.8197
+ ],
+ "relaxed": [
+  0.8799,
+  0.905,
+  0.8923
+ ],
+ "latency_avg_s": 0.0114,
+ "latency_p90_s": 0.0117,
+ "device": "NVIDIA GeForce RTX 3090"
+}

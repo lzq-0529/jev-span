@@ -1,0 +1,19 @@
+{
+ "method": "nuner_zero",
+ "model": "numind/NuNER_Zero",
+ "dataset": "crossner_literature",
+ "n": 200,
+ "strict": [
+  0.6368,
+  0.575,
+  0.6043
+ ],
+ "relaxed": [
+  0.7095,
+  0.6406,
+  0.6733
+ ],
+ "latency_avg_s": 0.0373,
+ "latency_p90_s": 0.0361,
+ "device": "NVIDIA GeForce RTX 3090"
+}

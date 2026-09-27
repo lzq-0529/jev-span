@@ -1,0 +1,8 @@
+{
+  "entities": {
+    "per": {"title": "person", "description": "name of a person (real or fictional), without titles such as Mr or President", "examples": ["Angela Merkel", "Smith"]},
+    "loc": {"title": "location", "description": "country, city, region, geographic place; NOT when the place name stands for a sports team", "examples": ["Germany", "New York", "Europe"]},
+    "org": {"title": "organization", "description": "company, government body, political party, agency, institution, club, and sports teams even when named only by their city or country (e.g. in results tables); a preceding country or possessive is not part of the name", "examples": ["Microsoft", "Manchester United", "Reuters", "Chester (as a football team)"], "counter_examples": ["Japan 's Economic Planning Agency (tag Japan and Economic Planning Agency separately)"]},
+    "misc": {"title": "miscellaneous", "description": "other proper names: nationality or demonym adjectives, languages, religions, named events and competitions, named products and titles of works; NOT dates, weekdays, months, job titles or common nouns", "examples": ["German", "World Cup", "Olympics", "Windows"], "counter_examples": ["Friday", "minister", "floating rate issue"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+ "dataset": "crossner_music",
+ "split": "test",
+ "n": 30,
+ "strict": [
+  0.783,
+  0.7793,
+  0.7812
+ ],
+ "relaxed": [
+  0.8491,
+  0.8451,
+  0.8471
+ ],
+ "usage": {
+  "requests": 123,
+  "questions": 1502,
+  "input_tokens": 770507,
+  "cost_usd": 0.032362,
+  "cache_hits": 0
+ },
+ "cost_per_1k_docs": 1.0787,
+ "wall_s": 18.38,
+ "latency_avg_s": 0.612,
+ "latency_p90_s": 0.751,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

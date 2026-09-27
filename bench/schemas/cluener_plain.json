@@ -1,0 +1,14 @@
+{
+  "entities": {
+    "name": {"title": "人名", "description": "人物姓名，包括真实人物和虚构角色", "examples": ["林志玲", "孙悟空"]},
+    "address": {"title": "地址", "description": "国家、省市区县、街道门牌、商圈等地理位置", "examples": ["成都", "美国", "朝阳区建国路"]},
+    "company": {"title": "公司", "description": "公司、企业、银行、商业品牌主体的名称或简称", "examples": ["腾讯", "招商银行", "暴雪"]},
+    "government": {"title": "政府", "description": "政府机关、部委、军队、法院等国家机构", "examples": ["财政部", "银监会", "美军"]},
+    "organization": {"title": "组织机构", "description": "学校、协会、体育俱乐部、球队、联赛、非营利组织等", "examples": ["皇家马德里", "中超", "红十字会"]},
+    "position": {"title": "职位", "description": "职业、职位、身份头衔", "examples": ["记者", "总经理", "教授"]},
+    "scene": {"title": "景点", "description": "旅游景点、公园、博物馆、场馆、自然景观", "examples": ["故宫", "西湖", "鸟巢"]},
+    "book": {"title": "书籍报刊", "description": "书籍、小说、报纸、杂志的名称", "examples": ["《三体》", "《读者》"], "include_brackets": true},
+    "movie": {"title": "影视", "description": "电影、电视剧、节目的名称", "examples": ["《流浪地球》", "《甄嬛传》"], "include_brackets": true},
+    "game": {"title": "游戏", "description": "电子游戏、网络游戏的名称", "examples": ["英雄联盟", "魔兽世界"]}
+  }
+}

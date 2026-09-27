@@ -1,0 +1,29 @@
+{
+ "dataset": "wnut",
+ "split": "test",
+ "n": 200,
+ "strict": [
+  0.5,
+  0.6532,
+  0.5664
+ ],
+ "relaxed": [
+  0.5531,
+  0.7225,
+  0.6266
+ ],
+ "usage": {
+  "requests": 2,
+  "questions": 7,
+  "input_tokens": 9340,
+  "cost_usd": 0.000392,
+  "cache_hits": 2352
+ },
+ "cost_per_1k_docs": 0.002,
+ "wall_s": 0.47,
+ "latency_avg_s": 0.007,
+ "latency_p90_s": 0.006,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

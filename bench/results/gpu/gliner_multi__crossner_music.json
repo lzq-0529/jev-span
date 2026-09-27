@@ -1,0 +1,19 @@
+{
+ "method": "gliner_multi",
+ "model": "urchade/gliner_multi-v2.1",
+ "dataset": "crossner_music",
+ "n": 200,
+ "strict": [
+  0.7362,
+  0.6948,
+  0.7149
+ ],
+ "relaxed": [
+  0.7972,
+  0.7524,
+  0.7742
+ ],
+ "latency_avg_s": 0.0194,
+ "latency_p90_s": 0.0206,
+ "device": "NVIDIA GeForce RTX 3090"
+}

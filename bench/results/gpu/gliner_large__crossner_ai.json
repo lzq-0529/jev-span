@@ -1,0 +1,19 @@
+{
+ "method": "gliner_large",
+ "model": "urchade/gliner_large-v2.1",
+ "dataset": "crossner_ai",
+ "n": 200,
+ "strict": [
+  0.5117,
+  0.4859,
+  0.4984
+ ],
+ "relaxed": [
+  0.5842,
+  0.5547,
+  0.5691
+ ],
+ "latency_avg_s": 0.0336,
+ "latency_p90_s": 0.0344,
+ "device": "NVIDIA GeForce RTX 3090"
+}

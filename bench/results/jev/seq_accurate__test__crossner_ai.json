@@ -1,0 +1,29 @@
+{
+ "dataset": "crossner_ai",
+ "split": "test",
+ "n": 30,
+ "strict": [
+  0.6489,
+  0.68,
+  0.6641
+ ],
+ "relaxed": [
+  0.7557,
+  0.792,
+  0.7734
+ ],
+ "usage": {
+  "requests": 123,
+  "questions": 920,
+  "input_tokens": 508982,
+  "cost_usd": 0.021377,
+  "cache_hits": 0
+ },
+ "cost_per_1k_docs": 0.7126,
+ "wall_s": 18.06,
+ "latency_avg_s": 0.602,
+ "latency_p90_s": 0.829,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "method": "qwen3_8_27b",
+ "model": "qwen3.8-27b",
+ "dataset": "mitres",
+ "n": 200,
+ "strict": [
+  0.7784,
+  0.7007,
+  0.7375
+ ],
+ "relaxed": [
+  0.9024,
+  0.8124,
+  0.855
+ ],
+ "latency_avg_s": 1.252,
+ "wall_s": 32.1,
+ "usage": {
+  "prompt_tokens": 54249,
+  "completion_tokens": 6902
+ }
+}

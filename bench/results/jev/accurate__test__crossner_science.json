@@ -1,0 +1,29 @@
+{
+ "dataset": "crossner_science",
+ "split": "test",
+ "n": 200,
+ "strict": [
+  0.8017,
+  0.7546,
+  0.7774
+ ],
+ "relaxed": [
+  0.8557,
+  0.8054,
+  0.8298
+ ],
+ "usage": {
+  "requests": 622,
+  "questions": 5225,
+  "input_tokens": 2792644,
+  "cost_usd": 0.117291,
+  "cache_hits": 3541
+ },
+ "cost_per_1k_docs": 0.5865,
+ "wall_s": 18.65,
+ "latency_avg_s": 0.553,
+ "latency_p90_s": 0.77,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

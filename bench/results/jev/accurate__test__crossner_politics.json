@@ -1,0 +1,29 @@
+{
+ "dataset": "crossner_politics",
+ "split": "test",
+ "n": 200,
+ "strict": [
+  0.8403,
+  0.8241,
+  0.8321
+ ],
+ "relaxed": [
+  0.8716,
+  0.8548,
+  0.8631
+ ],
+ "usage": {
+  "requests": 635,
+  "questions": 3782,
+  "input_tokens": 2390505,
+  "cost_usd": 0.100401,
+  "cache_hits": 4407
+ },
+ "cost_per_1k_docs": 0.502,
+ "wall_s": 20.16,
+ "latency_avg_s": 0.597,
+ "latency_p90_s": 0.835,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

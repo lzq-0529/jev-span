@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "person": {
+      "title": "person",
+      "description": "name of a person, including usernames or nicknames that refer to a person",
+      "examples": [
+        "Taylor",
+        "Jonyeee"
+      ]
+    },
+    "location": {
+      "title": "location",
+      "description": "name of a place: city, country, venue, landmark",
+      "examples": [
+        "Chicago",
+        "Central Park"
+      ]
+    },
+    "corporation": {
+      "title": "corporation",
+      "description": "a company or business named as an organisation",
+      "examples": [
+        "Apple",
+        "Starbucks"
+      ]
+    },
+    "product": {
+      "title": "product",
+      "description": "a named product, device, app, game or service",
+      "examples": [
+        "Galaxy S8",
+        "Instagram"
+      ]
+    },
+    "creative_work": {
+      "title": "creative work",
+      "description": "title of a movie, song, book, TV show or album",
+      "examples": [
+        "Game of Thrones"
+      ]
+    },
+    "group": {
+      "title": "group",
+      "description": "a named group: band, sports team, club, political or social group",
+      "examples": [
+        "Lakers",
+        "Metallica"
+      ]
+    }
+  }
+}

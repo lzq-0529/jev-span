@@ -1,0 +1,29 @@
+{
+ "dataset": "conll",
+ "split": "test",
+ "n": 200,
+ "strict": [
+  0.8197,
+  0.8197,
+  0.8197
+ ],
+ "relaxed": [
+  0.8787,
+  0.8787,
+  0.8787
+ ],
+ "usage": {
+  "requests": 0,
+  "questions": 0,
+  "input_tokens": 0,
+  "cost_usd": 0.0,
+  "cache_hits": 1514
+ },
+ "cost_per_1k_docs": 0.0,
+ "wall_s": 0.13,
+ "latency_avg_s": 0.004,
+ "latency_p90_s": 0.005,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

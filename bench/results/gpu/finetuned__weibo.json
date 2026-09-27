@@ -1,0 +1,19 @@
+{
+ "method": "finetuned",
+ "model": "PassbyGrocer/bert-ner-weibo",
+ "dataset": "weibo",
+ "n": 200,
+ "strict": [
+  0.6116,
+  0.6573,
+  0.6336
+ ],
+ "relaxed": [
+  0.7043,
+  0.757,
+  0.7297
+ ],
+ "latency_avg_s": 0.0076,
+ "latency_p90_s": 0.0096,
+ "device": "NVIDIA GeForce RTX 3090"
+}

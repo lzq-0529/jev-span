@@ -1,0 +1,29 @@
+{
+ "dataset": "cluener",
+ "split": "test",
+ "n": 30,
+ "strict": [
+  0.7042,
+  0.7463,
+  0.7246
+ ],
+ "relaxed": [
+  0.8169,
+  0.8657,
+  0.8406
+ ],
+ "usage": {
+  "requests": 108,
+  "questions": 522,
+  "input_tokens": 606206,
+  "cost_usd": 0.02546,
+  "cache_hits": 0
+ },
+ "cost_per_1k_docs": 0.8487,
+ "wall_s": 16.43,
+ "latency_avg_s": 0.548,
+ "latency_p90_s": 0.69,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

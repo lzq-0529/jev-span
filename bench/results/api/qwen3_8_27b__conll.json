@@ -1,0 +1,22 @@
+{
+ "method": "qwen3_8_27b",
+ "model": "qwen3.8-27b",
+ "dataset": "conll",
+ "n": 200,
+ "strict": [
+  0.8454,
+  0.8787,
+  0.8617
+ ],
+ "relaxed": [
+  0.858,
+  0.8918,
+  0.8746
+ ],
+ "latency_avg_s": 1.21,
+ "wall_s": 31.2,
+ "usage": {
+  "prompt_tokens": 63667,
+  "completion_tokens": 6117
+ }
+}

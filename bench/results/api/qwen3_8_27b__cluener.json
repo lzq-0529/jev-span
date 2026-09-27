@@ -1,0 +1,22 @@
+{
+ "method": "qwen3_8_27b",
+ "model": "qwen3.8-27b",
+ "dataset": "cluener",
+ "n": 200,
+ "strict": [
+  0.6618,
+  0.6126,
+  0.6363
+ ],
+ "relaxed": [
+  0.781,
+  0.723,
+  0.7509
+ ],
+ "latency_avg_s": 1.39,
+ "wall_s": 35.5,
+ "usage": {
+  "prompt_tokens": 96075,
+  "completion_tokens": 9762
+ }
+}

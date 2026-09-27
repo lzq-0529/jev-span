@@ -1,0 +1,19 @@
+{
+  "entities": {
+    "brand": {
+      "title": "品牌",
+      "description": "商品的品牌或厂商名称",
+      "examples": ["苹果", "Nike", "海尔"]
+    },
+    "product": {
+      "title": "产品型号",
+      "description": "具体的产品名称或型号，不含品牌、容量、颜色等规格",
+      "examples": ["iPhone 15", "Mate 60 Pro", "Air Jordan 1"]
+    },
+    "price": {
+      "title": "价格",
+      "description": "商品的价格金额，包含货币单位或符号",
+      "examples": ["299元", "$19.99", "1.2万元"]
+    }
+  }
+}

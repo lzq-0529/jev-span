@@ -1,0 +1,19 @@
+{
+ "method": "gliner2.5",
+ "model": "fastino/gliner2.5-multi-v1",
+ "dataset": "mitres",
+ "n": 200,
+ "strict": [
+  0.521,
+  0.3824,
+  0.4411
+ ],
+ "relaxed": [
+  0.7184,
+  0.5273,
+  0.6082
+ ],
+ "latency_avg_s": 0.0232,
+ "latency_p90_s": 0.0237,
+ "device": "NVIDIA GeForce RTX 3090"
+}

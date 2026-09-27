@@ -1,0 +1,19 @@
+{
+ "method": "gliner_multi",
+ "model": "urchade/gliner_multi-v2.1",
+ "dataset": "mitres",
+ "n": 200,
+ "strict": [
+  0.4244,
+  0.2067,
+  0.278
+ ],
+ "relaxed": [
+  0.639,
+  0.3112,
+  0.4185
+ ],
+ "latency_avg_s": 0.0177,
+ "latency_p90_s": 0.018,
+ "device": "NVIDIA GeForce RTX 3090"
+}

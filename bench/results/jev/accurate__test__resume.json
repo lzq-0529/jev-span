@@ -1,0 +1,29 @@
+{
+ "dataset": "resume",
+ "split": "test",
+ "n": 200,
+ "strict": [
+  0.8922,
+  0.8752,
+  0.8836
+ ],
+ "relaxed": [
+  0.9611,
+  0.9427,
+  0.9518
+ ],
+ "usage": {
+  "requests": 0,
+  "questions": 0,
+  "input_tokens": 0,
+  "cost_usd": 0.0,
+  "cache_hits": 3776
+ },
+ "cost_per_1k_docs": 0.0,
+ "wall_s": 0.35,
+ "latency_avg_s": 0.01,
+ "latency_p90_s": 0.016,
+ "opts": {
+  "nominate_group_size": 4
+ }
+}

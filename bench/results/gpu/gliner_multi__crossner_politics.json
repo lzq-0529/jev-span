@@ -1,0 +1,19 @@
+{
+ "method": "gliner_multi",
+ "model": "urchade/gliner_multi-v2.1",
+ "dataset": "crossner_politics",
+ "n": 200,
+ "strict": [
+  0.6743,
+  0.6567,
+  0.6654
+ ],
+ "relaxed": [
+  0.7445,
+  0.725,
+  0.7346
+ ],
+ "latency_avg_s": 0.0194,
+ "latency_p90_s": 0.0202,
+ "device": "NVIDIA GeForce RTX 3090"
+}

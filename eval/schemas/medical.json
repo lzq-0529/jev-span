@@ -1,0 +1,20 @@
+{
+  "entities": {
+    "drug": {
+      "title": "药品",
+      "description": "药物或药品的名称，包括通用名、商品名和剂型",
+      "examples": ["阿莫西林", "布洛芬缓释胶囊", "连花清瘟胶囊"]
+    },
+    "disease": {
+      "title": "疾病",
+      "description": "疾病、诊断或病症的名称",
+      "examples": ["高血压", "2型糖尿病", "急性支气管炎"],
+      "counter_examples": ["咳嗽", "发烧", "头疼"]
+    },
+    "exam": {
+      "title": "检查项目",
+      "description": "医学检查、化验或影像检查项目的名称",
+      "examples": ["血常规", "胸部CT", "心电图"]
+    }
+  }
+}

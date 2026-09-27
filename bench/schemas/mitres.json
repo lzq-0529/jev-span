@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "restaurant_name": {
+      "title": "restaurant name",
+      "description": "name of a restaurant or chain",
+      "examples": [
+        "olive garden"
+      ]
+    },
+    "cuisine": {
+      "title": "cuisine",
+      "description": "a type of cuisine or restaurant category",
+      "examples": [
+        "thai",
+        "fast food"
+      ]
+    },
+    "dish": {
+      "title": "dish",
+      "description": "a specific dish, food or drink",
+      "examples": [
+        "pad thai",
+        "margaritas"
+      ]
+    },
+    "amenity": {
+      "title": "amenity",
+      "description": "a feature or service of the place: seating, parking, bar, kid friendly, atmosphere",
+      "examples": [
+        "outdoor seating",
+        "kid friendly"
+      ]
+    },
+    "location": {
+      "title": "location",
+      "description": "where the restaurant should be, including relative phrases",
+      "examples": [
+        "near me",
+        "within 5 miles",
+        "downtown"
+      ]
+    },
+    "hours": {
+      "title": "hours",
+      "description": "opening time or time constraint",
+      "examples": [
+        "open now",
+        "after 10 pm"
+      ]
+    },
+    "price": {
+      "title": "price",
+      "description": "price level or cost words",
+      "examples": [
+        "cheap",
+        "under 20 dollars"
+      ]
+    },
+    "rating": {
+      "title": "rating",
+      "description": "quality or rating words",
+      "examples": [
+        "five star",
+        "highly rated"
+      ]
+    }
+  }
+}

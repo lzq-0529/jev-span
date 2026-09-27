@@ -1,0 +1,14 @@
+{
+  "entities": {
+    "name": {"title": "人名", "description": "人名，也包括小说里的人物、人物绰号、能对应到具体人物的著名别称", "examples": ["林志玲", "宋江", "及时雨"]},
+    "address": {"title": "地址", "description": "省、市、区、街道、门牌号、路、村等地址，单独出现也标；地址要标记完全、标到最细", "examples": ["成都", "北京市朝阳区建国路88号", "长丰村"]},
+    "company": {"title": "公司", "description": "公司、集团、银行（央行、中国人民银行除外）、网站媒体等企业名称或简称", "examples": ["新东方", "招商银行", "新华网"]},
+    "government": {"title": "政府", "description": "中央和地方行政机关：国务院及各部委、中国人民银行、审计署、海关税务工商等直属机构，以及军队", "examples": ["财政部", "银监会", "美军"]},
+    "organization": {"title": "组织机构", "description": "篮球队、足球队、乐团、社团、联赛、学校等，也包括小说里的帮派门派", "examples": ["皇家马德里", "少林寺", "丐帮"]},
+    "position": {"title": "职位", "description": "古代或现代的职称职位身份，如 总经理、记者、艺术家、巡抚", "examples": ["记者", "总裁", "收藏家"]},
+    "scene": {"title": "景点", "description": "常见旅游景点、公园、动物园、海洋馆、博物馆，以及作为景点提及的江河湖山、古镇村落", "examples": ["长沙公园", "黄河", "故宫"]},
+    "book": {"title": "书籍", "description": "小说、杂志、教材、地图册、食谱等书店能买到的书籍，含电子书；由书改编的电影按上下文区分", "examples": ["《三体》", "《读者》"], "include_brackets": true},
+    "movie": {"title": "电影", "description": "电影（包括院线纪录片）；按上下文区分是电影名还是书名", "examples": ["《流浪地球》", "《泰坦尼克号》"], "include_brackets": true},
+    "game": {"title": "游戏", "description": "电子游戏、网络游戏；由小说电视剧改编的要看具体场景是不是游戏", "examples": ["英雄联盟", "魔兽世界"]}
+  }
+}
