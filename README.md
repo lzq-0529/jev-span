@@ -12,6 +12,8 @@ Describe your entity types in one line each. No training data, no GPU, no fine-t
 
 **English** · [简体中文](https://github.com/lzq-0529/jev-span/blob/main/README.zh-CN.md)
 
+<img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo-en.png" alt="JevSpan web UI: people, organizations and addresses highlighted in an English news paragraph, with Jev's probability for each entity" width="900"/>
+
 </div>
 
 ---
@@ -181,6 +183,8 @@ Environment variables: `TYPESAFE_API_KEY` (or `JEV_API_KEY`), `TYPESAFE_BASE_URL
 ## Web UI
 
 `uv run jevspan-web` serves a small app at `http://127.0.0.1:47321`. Paste text, pick a preset (people, organizations and addresses; medical; e-commerce) or edit the schema JSON, and see the highlighted entities, a result table, token usage, and the decision tree that led to each answer. The interface comes in English and Chinese. It follows your browser language; switch with the button in the top-right corner, or open `?lang=en` or `?lang=zh`.
+
+<img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo-full-en.png" alt="Full web UI including the decision trace: sentence, clause and window levels, each with Jev's top score" width="900"/>
 
 ## How it works
 
