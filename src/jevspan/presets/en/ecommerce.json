@@ -1,0 +1,20 @@
+{
+  "entities": {
+    "brand": {
+      "title": "Brand",
+      "description": "the brand or manufacturer of a product, marked on its own and not joined to the model name",
+      "examples": ["Apple", "Nike", "Sony"]
+    },
+    "product": {
+      "title": "Model",
+      "description": "the product name or model itself, without the brand, category words (phone, shoes, headphones), version suffixes (new, 2024 edition) or capacity, color and size",
+      "examples": ["iPhone 15", "Air Force 1", "WH-1000XM5"],
+      "counter_examples": ["Apple iPhone 15", "Air Force 1 sneakers", "iPhone 15 new edition"]
+    },
+    "price": {
+      "title": "Price",
+      "description": "the price amount itself, including the currency unit or symbol, without words like about, from or only",
+      "examples": ["$19.99", "899 yuan", "€1,299"]
+    }
+  }
+}

@@ -8,11 +8,9 @@ Describe your entity types in one line each. No training data, no GPU, no fine-t
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lzq-0529/jev-span/blob/main/LICENSE)
 ![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-3776ab.svg)
 ![Zero-shot](https://img.shields.io/badge/NER-zero--shot-8a2be2.svg)
-![Chinese + English](https://img.shields.io/badge/lang-中文%20%7C%20English-e34c26.svg)
+![Chinese + English](https://img.shields.io/badge/lang-Chinese%20%7C%20English-e34c26.svg)
 
 **English** · [简体中文](https://github.com/lzq-0529/jev-span/blob/main/README.zh-CN.md)
-
-<img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo.png" alt="JevSpan web UI: people, organizations and addresses highlighted in mixed Chinese and English text, with Jev's probability for each entity" width="900"/>
 
 </div>
 
@@ -23,10 +21,10 @@ Jev answers typed multiple-choice questions with calibrated probabilities, but i
 On **12 public NER benchmarks** (Chinese, English, and the five CrossNER domains), JevSpan averages **73.7 strict F1 fully zero-shot**. That is 1.6 points above prompting **Qwen3.8-27B** with the same type descriptions, and 20+ points above Baidu UIE and GLiNER on the datasets none of them has seen.
 
 ```text
-$ jevspan "昨天下午，张伟教授在清华大学主楼作了报告，随后前往北京市海淀区中关村大街27号参观。"
-人名    张伟                        [5,7)     …
-机构    清华大学                    [10,14)   …
-地址    北京市海淀区中关村大街27号    [25,39)   …
+$ jevspan "Tim Cook announced that Apple will open a new office in Austin, Texas."
+Person         Tim Cook         [0,8)     …
+Organization   Apple            [24,29)   …
+Address        Austin, Texas    [56,69)   …
 ```
 
 <sub>Each line is type, text, character offsets, then Jev's score and where the entity came from (trimmed here).</sub>
@@ -170,6 +168,7 @@ uv run jevspan --trace "text"            # print every segment, candidate, and v
 | Option | What it does |
 |---|---|
 | `--schema FILE` | Zero-shot entity types (default: person, organization, address) |
+| `--lang auto\|zh\|en` | Language of the default entity types and of the messages. `auto` (the default) picks Chinese when the text contains Chinese characters and English otherwise. |
 | `--preset accurate\|balanced\|legacy` | `accurate` is the default. `balanced` is about 25% cheaper with slightly lower recall. `legacy` is the original hierarchical pipeline. |
 | `--min-score X` | Only output entities whose score is at least `X` |
 | `--no-context` | Don't send the surrounding sentence to Jev |
@@ -181,9 +180,7 @@ Environment variables: `TYPESAFE_API_KEY` (or `JEV_API_KEY`), `TYPESAFE_BASE_URL
 
 ## Web UI
 
-`uv run jevspan-web` serves a small app at `http://127.0.0.1:47321`. Paste text, pick a preset (people, organizations and addresses; medical; e-commerce) or edit the schema JSON, and see the highlighted entities, a result table, token usage, and the decision tree that led to each answer. The interface is in Chinese.
-
-<img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo-full.png" alt="Full web UI including the decision trace: sentence, sub-clause and window levels, each with Jev's top score" width="900"/>
+`uv run jevspan-web` serves a small app at `http://127.0.0.1:47321`. Paste text, pick a preset (people, organizations and addresses; medical; e-commerce) or edit the schema JSON, and see the highlighted entities, a result table, token usage, and the decision tree that led to each answer. The interface comes in English and Chinese. It follows your browser language; switch with the button in the top-right corner, or open `?lang=en` or `?lang=zh`.
 
 ## How it works
 

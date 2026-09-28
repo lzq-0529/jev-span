@@ -169,6 +169,7 @@ uv run jevspan --trace "文本"             # 打印每个片段、候选和判�
 | 参数 | 作用 |
 |---|---|
 | `--schema FILE` | 零样本实体类型（默认：人名、机构、地址） |
+| `--lang auto\|zh\|en` | 默认实体类型和输出提示的语言。默认 `auto`：文本里有汉字就用中文，否则用英文。 |
 | `--preset accurate\|balanced\|legacy` | 默认 `accurate`。`balanced` 便宜约 25%，召回略低。`legacy` 是最早的逐层分类流程。 |
 | `--min-score X` | 只输出分数不低于 `X` 的实体 |
 | `--no-context` | 不把所在句子作为上下文发给 Jev |
@@ -180,7 +181,7 @@ uv run jevspan --trace "文本"             # 打印每个片段、候选和判�
 
 ## 网页界面
 
-`uv run jevspan-web` 会在 `http://127.0.0.1:47321` 启动一个小应用。粘贴文本，选一个预设（人名/机构/地址、医疗、电商）或直接编辑 schema JSON，就能看到高亮的实体、结果表、token 用量，以及每个结果背后的决策树。
+`uv run jevspan-web` 会在 `http://127.0.0.1:47321` 启动一个小应用。粘贴文本，选一个预设（人名/机构/地址、医疗、电商）或直接编辑 schema JSON，就能看到高亮的实体、结果表、token 用量，以及每个结果背后的决策树。界面有中文和英文两种，默认跟随浏览器语言；可以点右上角的按钮切换，也可以直接打开 `?lang=zh` 或 `?lang=en`。
 
 <img src="https://raw.githubusercontent.com/lzq-0529/jev-span/main/docs/assets/demo-full.png" alt="完整网页界面，含逐层过程：句子、分隔符、窗口各层级及 Jev 最高分" width="900"/>
 

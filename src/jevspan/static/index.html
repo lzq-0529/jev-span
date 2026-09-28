@@ -3,66 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JevSpan · 零样本实体识别</title>
+  <title>JevSpan</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='sans-serif'%3EJ%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
   <header class="top">
     <div class="wrap">
-      <h1>JevSpan <span class="h1-sub">零样本实体识别</span></h1>
-      <p class="sub">全文遍历，按标点由粗到细切分，每个片段交给 Jev 打分，取最高分作为判断。实体类型只需给出名称、一句描述和几个例子（零样本）。</p>
+      <div class="title-row">
+        <h1>JevSpan <span class="h1-sub" data-i18n="subtitle"></span></h1>
+        <button id="lang" class="lang-switch" type="button"></button>
+      </div>
+      <p class="sub" data-i18n="intro"></p>
     </div>
   </header>
 
   <main class="wrap grid">
     <section class="card input-card">
       <div class="schema-row">
-        <label for="preset" class="label">实体类型</label>
+        <label for="preset" class="label" data-i18n="entityTypes"></label>
         <select id="preset"></select>
       </div>
       <details class="schema-edit">
-        <summary>编辑实体类型定义（JSON）</summary>
+        <summary data-i18n="editSchema"></summary>
         <textarea id="schema" rows="10" spellcheck="false"></textarea>
-        <p class="hint">每个类型：title 名称、description 一句定义、examples 几个例子，可选 counter_examples 反例。</p>
+        <p class="hint" data-i18n="schemaHint"></p>
       </details>
 
-      <label for="text" class="label">输入文本</label>
-      <textarea id="text" rows="8" maxlength="5000" placeholder="粘贴一段中文或英文……"></textarea>
+      <label for="text" class="label" data-i18n="inputText"></label>
+      <textarea id="text" rows="8" maxlength="5000"></textarea>
       <div class="samples" id="samples"></div>
       <div class="row">
-        <label class="toggle"><input type="checkbox" id="ctx" checked /> 句子上下文</label>
-        <label class="toggle"><input type="checkbox" id="win" checked /> 细分</label>
-        <label class="toggle"><input type="checkbox" id="prop" checked /> 全文补全</label>
-        <select id="refine" aria-label="细分方式">
-          <option value="choice">选择题提名（快、省）</option>
-          <option value="scan">逐窗口提问</option>
+        <label class="toggle"><input type="checkbox" id="ctx" checked /> <span data-i18n="optContext"></span></label>
+        <label class="toggle"><input type="checkbox" id="win" checked /> <span data-i18n="optWindow"></span></label>
+        <label class="toggle"><input type="checkbox" id="prop" checked /> <span data-i18n="optPropagate"></span></label>
+        <select id="refine">
+          <option value="choice" data-i18n="refineChoice"></option>
+          <option value="scan" data-i18n="refineScan"></option>
         </select>
         <span class="count" id="count">0 / 5000</span>
       </div>
-      <button id="run" class="btn">开始识别</button>
+      <button id="run" class="btn" data-i18n="run"></button>
       <p class="status" id="status" role="status"></p>
     </section>
 
     <section class="card">
       <div class="card-head">
-        <h2>识别结果</h2>
+        <h2 data-i18n="results"></h2>
         <div class="legend" id="legend"></div>
       </div>
-      <div id="highlight" class="highlight empty">识别结果会在这里高亮显示。</div>
+      <div id="highlight" class="highlight empty" data-i18n="resultsEmpty"></div>
       <div id="usage" class="usage"></div>
       <table id="table" class="table" hidden>
-        <thead><tr><th>类型</th><th>实体</th><th>位置</th><th>Jev 最高分</th><th>来源</th></tr></thead>
+        <thead><tr>
+          <th data-i18n="colType"></th><th data-i18n="colEntity"></th><th data-i18n="colSpan"></th>
+          <th data-i18n="colScore"></th><th data-i18n="colSource"></th>
+        </tr></thead>
         <tbody></tbody>
       </table>
     </section>
 
     <section class="card full">
       <div class="card-head">
-        <h2>逐层过程</h2>
-        <span class="hint">句子 → 分隔符（，、：）→ 括号引号 → 空格 → 窗口选择题 → 全文补全，每一步取最高分</span>
+        <h2 data-i18n="trace"></h2>
+        <span class="hint" data-i18n="traceHint"></span>
       </div>
-      <div id="trace" class="trace empty">运行后可以看到每个片段在每一层的得分和决定。</div>
+      <div id="trace" class="trace empty" data-i18n="traceEmpty"></div>
     </section>
   </main>
 

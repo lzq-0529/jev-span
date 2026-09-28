@@ -118,3 +118,29 @@ DEFAULT_SCHEMA = Schema(
         ),
     )
 )
+
+DEFAULT_SCHEMA_EN = Schema(
+    (
+        EntityType(
+            "person", "Person", "the name of a specific person, without titles or job roles such as Mr, Professor or CEO",
+            ("Tim Cook", "Angela Merkel", "张伟"),
+        ),
+        EntityType(
+            "organization", "Organization",
+            "the name of a company, school, hospital, bank, government body, association or other organization",
+            ("Microsoft", "Stanford University", "World Health Organization", "阿里巴巴集团"),
+        ),
+        EntityType(
+            "address", "Address",
+            "a geographic location: country, state, city, district, street, house number, building or campus",
+            ("London", "Austin, Texas", "1600 Amphitheatre Parkway, Mountain View", "杭州"),
+        ),
+    )
+)
+
+DEFAULT_SCHEMAS = {"zh": DEFAULT_SCHEMA, "en": DEFAULT_SCHEMA_EN}
+
+
+def detect_lang(text: str) -> str:
+    """'zh' if the text contains any CJK ideograph, otherwise 'en'."""
+    return "zh" if any("\u4e00" <= ch <= "\u9fff" or "\u3400" <= ch <= "\u4dbf" for ch in text) else "en"

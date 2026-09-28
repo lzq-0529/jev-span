@@ -29,7 +29,7 @@ import asyncio
 from dataclasses import asdict, dataclass, field, replace
 from typing import Literal, Protocol
 
-from .schema import DEFAULT_SCHEMA, EntityType, Schema
+from .schema import DEFAULT_SCHEMA, DEFAULT_SCHEMAS, EntityType, Schema
 from .segmenter import (
     LEVEL_CLAUSE,
     LEVEL_NAMES,
@@ -299,7 +299,7 @@ class Recognizer:
     def _segment_criteria(self) -> dict[str, str]:
         titles = "/".join(t.title for t in self.schema.types)
         example = next((t.examples[0] for t in self.schema.types if t.examples), self.schema.types[0].title)
-        if self.schema is DEFAULT_SCHEMA:
+        if any(self.schema is s for s in DEFAULT_SCHEMAS.values()):
             none_desc = DEFAULT_NONE_DESC.format(titles=titles)
             mixed_desc = DEFAULT_MIXED_DESC
             partial_desc = DEFAULT_PARTIAL_DESC

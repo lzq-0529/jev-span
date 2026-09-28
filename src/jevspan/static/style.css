@@ -28,6 +28,12 @@ body {
 .top h1 { margin: 0; font-size: 26px; letter-spacing: 0.5px; }
 .h1-sub { margin-left: 8px; font-size: 16px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
 .sub { margin: 6px 0 0; color: var(--muted); max-width: 760px; }
+.title-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.lang-switch {
+  border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 4px 14px;
+  font: inherit; font-size: 13px; color: var(--ink); cursor: pointer;
+}
+.lang-switch:hover { border-color: var(--accent); color: var(--accent); }
 
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding-bottom: 40px; }
 .full { grid-column: 1 / -1; }

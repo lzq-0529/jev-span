@@ -11,7 +11,19 @@ from dotenv import find_dotenv, load_dotenv
 
 from .jev_client import JevClient
 from .recognizer import Recognizer, TraceNode
-from .schema import DEFAULT_SCHEMA, Schema
+from .schema import DEFAULT_SCHEMAS, Schema, detect_lang
+
+MESSAGES = {
+    "zh": {
+        "empty": "没有识别到{titles}。",
+        "usage": "\n请求 {requests} 次，问题 {questions} 个，缓存命中 {cache_hits}，输入 {input_tokens} tokens，约 ${cost:.6f}",
+    },
+    "en": {
+        "empty": "No {titles} found.",
+        "usage": "\n{requests} requests, {questions} questions, {cache_hits} cache hits, "
+        "{input_tokens} input tokens, about ${cost:.6f}",
+    },
+}
 
 
 def _print_trace(node: TraceNode, depth: int = 0) -> None:
@@ -24,7 +36,9 @@ def _print_trace(node: TraceNode, depth: int = 0) -> None:
 
 async def _run(args: argparse.Namespace, text: str) -> int:
     async with JevClient(model=args.model, cache_path=None if args.no_cache else args.cache) as client:
-        schema = Schema.load(args.schema) if args.schema else DEFAULT_SCHEMA
+        lang = detect_lang(text) if args.lang == "auto" else args.lang
+        msg = MESSAGES[lang]
+        schema = Schema.load(args.schema) if args.schema else DEFAULT_SCHEMAS[lang]
         recognizer = Recognizer.from_preset(
             client,
             args.preset,
@@ -47,13 +61,15 @@ async def _run(args: argparse.Namespace, text: str) -> int:
                 _print_trace(node)
             print()
         if not result.entities:
-            print(f"没有识别到{schema.titles}。")
+            print(msg["empty"].format(titles=schema.titles))
         for e in result.entities:
             print(f"{schema.get(e.label).title}\t{e.text}\t[{e.start},{e.end})\t{e.score:.2f}\t{e.source}")
         u = client.usage
         print(
-            f"\n请求 {u.requests} 次，问题 {u.questions} 个，缓存命中 {u.cache_hits}，"
-            f"输入 {u.input_tokens} tokens，约 ${u.cost_usd:.6f}",
+            msg["usage"].format(
+                requests=u.requests, questions=u.questions, cache_hits=u.cache_hits,
+                input_tokens=u.input_tokens, cost=u.cost_usd,
+            ),
             file=sys.stderr,
         )
     return 0
@@ -70,6 +86,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-context", action="store_true", help="不把所在句子作为上下文发给 Jev")
     p.add_argument("--no-window", action="store_true", help="标点切不开时不做滑动窗口细分")
     p.add_argument("--schema", help="零样本实体类型定义 JSON，见 eval/schemas/*.json")
+    p.add_argument(
+        "--lang", choices=["auto", "zh", "en"], default="auto",
+        help="默认实体类型和输出提示的语言；auto（默认）在文本含汉字时用中文，否则用英文",
+    )
     p.add_argument("--preset", choices=["accurate", "balanced", "legacy"], default="accurate", help="accurate（默认）召回更高；balanced 便宜约 25%%")
     p.add_argument("--no-propagate", action="store_true", help="不做全文一致性补全")
     p.add_argument("--min-score", type=float, default=0.0, help="只输出最高分不低于该值的实体")

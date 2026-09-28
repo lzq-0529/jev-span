@@ -1,0 +1,20 @@
+{
+  "entities": {
+    "drug": {
+      "title": "Drug",
+      "description": "the name of a medicine, including generic names, brand names and dosage forms",
+      "examples": ["amoxicillin", "ibuprofen extended-release capsules", "Lipitor"]
+    },
+    "disease": {
+      "title": "Disease",
+      "description": "the name of a disease, diagnosis or condition, not a symptom",
+      "examples": ["hypertension", "type 2 diabetes", "acute bronchitis"],
+      "counter_examples": ["cough", "fever", "headache"]
+    },
+    "exam": {
+      "title": "Exam",
+      "description": "the name of a medical examination, lab test or imaging study",
+      "examples": ["complete blood count", "chest CT", "electrocardiogram"]
+    }
+  }
+}
