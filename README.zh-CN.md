@@ -9,6 +9,7 @@
 ![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-3776ab.svg)
 ![Zero-shot](https://img.shields.io/badge/NER-zero--shot-8a2be2.svg)
 ![Chinese + English](https://img.shields.io/badge/lang-中文%20%7C%20English-e34c26.svg)
+[![Listed in Awesome Jev](https://abdelstark.github.io/awesome-typesafe-jev/assets/listed-badge.svg)](https://abdelstark.github.io/awesome-typesafe-jev/projects/gh-lzq-0529-jev-span/)
 
 [English](https://github.com/lzq-0529/jev-span/blob/main/README.md) · **简体中文**
 
